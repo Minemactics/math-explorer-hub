@@ -121,9 +121,6 @@ function HomePage() {
             <Link to="/contact" className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition-colors hover:bg-white/10">
               Talk to an expert
             </Link>
-            <Link to="/products" className="inline-flex items-center gap-2 rounded-md px-6 py-3 font-semibold text-white/90 hover:text-white">
-              Explore the Mineoptic Suite →
-            </Link>
           </div>
         </div>
       </section>
