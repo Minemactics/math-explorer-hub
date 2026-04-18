@@ -277,7 +277,6 @@ function HomePage() {
           <p className="mt-4 text-lg text-accent-foreground/90">We'll tell you where Mineoptic fits.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link to="/contact" className="rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-elevated transition-transform hover:-translate-y-0.5">Request a demo</Link>
-            <Link to="/products" className="rounded-md border border-white/40 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur hover:bg-white/20">Explore the Suite</Link>
           </div>
         </div>
       </Section>
