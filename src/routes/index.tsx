@@ -1,6 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Wifi, Eye, Target, Layers, HandHeart, Check, X, Minus } from "lucide-react";
+import { ArrowRight, Wifi, Eye, Target, Layers, Check, X, Minus } from "lucide-react";
 import heroImg from "@/assets/hero-mine.jpg";
+import overviewIllustration from "@/assets/illustration-overview.png";
+import dashboardLite from "@/assets/dashboard-lite.png";
+import dashboardPlus from "@/assets/dashboard-plus.png";
+import dashboardCanvas from "@/assets/dashboard-canvas.png";
 import { Section, SectionTitle, Eyebrow } from "@/components/Section";
 
 export const Route = createFileRoute("/")({
@@ -22,7 +26,6 @@ const pillars = [
   { icon: Wifi, name: "Connectivity", text: "Mines don't choose where the network reaches. Deep pits, underground drives, remote dumps — the signal drops where the action happens. Offline capture, deferred sync with timestamps that don't lie, and a network design that doesn't wait on a telecom operator." },
   { icon: Target, name: "Accuracy", text: "Decisions are only as relevant as the data is accurate. We don't rely on accuracy under standard circumstances — we build alternate mechanisms to obtain the data essential for decisions like distances between assets and road conditions." },
   { icon: Layers, name: "Granularity", text: "The difference between 'trip logged' and 'five buckets, 3m 40s per bucket, 2m 10s queue at crusher' is the difference between a report and a decision. Mineoptic captures the cycle so managers can answer the question that matters." },
-  { icon: HandHeart, name: "Adoptability", text: "The best system is the one the shift actually uses. Mineoptic replaces pen-and-paper with a phone tap, manual summarisation with an automatic feed, and raw GPS dumps with operations-ready insight." },
 ];
 
 const wrong = [
@@ -55,11 +58,35 @@ function CellIcon({ type }: { type: Cell["type"] }) {
 
 const reasons = [
   { title: "Built for mining, not adapted for it.", text: "Every module, field, and report comes from a problem we have watched play out in a pit or on a haul road." },
-  { title: "Designed around the four pillars.", text: "Visibility, Connectivity, Accuracy, Granularity, Adoptability — each product is measured against all four." },
+  { title: "Designed around the four pillars.", text: "Visibility, Connectivity, Accuracy, Granularity — each product is measured against all four." },
   { title: "Operationally honest about connectivity.", text: "We assume the network will fail and the phone will sync later; our data model handles it gracefully, with timestamps that hold up." },
   { title: "No cognitive burden on managers.", text: "The dashboard is the answer, not a stack of raw feeds to interpret." },
   { title: "Your data, your database.", text: "With Mineoptic Canvas, sensitive production data can stay inside your own infrastructure or on cloud — your choice." },
   { title: "Priced for the gap we fill.", text: "Between commodity trackers and enterprise FMS, with value that justifies the step up." },
+];
+
+const suite = [
+  {
+    name: "Mineoptic Lite",
+    tag: "Start where the leakage is worst.",
+    text: "Replaces the most error-prone paper workflows — fuel logging and production counting — with a mobile app and visual analytics. Two modules: Mineoptic Fuel and Mineoptic Visual that enable digital logging even in low/no network zones.",
+    to: "/products/lite" as const,
+    image: dashboardLite,
+  },
+  {
+    name: "Mineoptic Plus",
+    tag: "Plus the mine's own network.",
+    text: "Everything in Lite, plus near-live fleet tracking built for the mine. Know whether each tipper is running empty, loaded, or parked — and determine productive hours, identify queue and road bottlenecks, even where the public network drops.",
+    to: "/products/plus" as const,
+    image: dashboardPlus,
+  },
+  {
+    name: "Mineoptic Canvas",
+    tag: "Your mine's digital twin.",
+    text: "A self-service BI canvas purpose-built for mines. Connect Excel, SQL, your ERP, your data server — compose the digital twin of your operations on your own database. Analyze bottlenecks, simulate operations, get competitive.",
+    to: "/products/canvas" as const,
+    image: dashboardCanvas,
+  },
 ];
 
 function HomePage() {
@@ -127,20 +154,32 @@ function HomePage() {
       <Section className="bg-subtle-gradient">
         <SectionTitle
           eyebrow="Our framework"
-          title="Five pillars of mining intelligence"
+          title="Four pillars of mining intelligence"
           lead="Every mining operation — surface or underground, coal or metal, captive or commercial — needs these things from its data. Mineoptic is designed around them."
           center
         />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {pillars.map((p) => (
-            <div key={p.name} className="group rounded-xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-elevated">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-teal-gradient text-white">
-                <p.icon className="h-6 w-6" />
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2">
+            {pillars.map((p) => (
+              <div key={p.name} className="group rounded-xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-elevated">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-teal-gradient text-white">
+                  <p.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-5 text-xl font-semibold">{p.name}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
               </div>
-              <h3 className="mt-5 text-xl font-semibold">{p.name}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <img
+              src={overviewIllustration}
+              alt="Illustration of mining intelligence connecting trucks, excavators and dashboards"
+              loading="lazy"
+              width={1024}
+              height={768}
+              className="w-full max-w-xl"
+            />
+          </div>
         </div>
       </Section>
 
@@ -158,7 +197,7 @@ function HomePage() {
                 <tr>
                   <th className="px-5 py-4 font-semibold">Capability</th>
                   <th className="px-5 py-4 font-semibold">GPS / RFID / CCTV</th>
-                  <th className="px-5 py-4 font-semibold bg-accent text-accent-foreground">Mineoptic</th>
+                  <th className="bg-accent px-5 py-4 font-semibold text-accent-foreground">Mineoptic</th>
                   <th className="px-5 py-4 font-semibold">Enterprise FMS</th>
                 </tr>
               </thead>
@@ -169,7 +208,7 @@ function HomePage() {
                     <td className="px-5 py-4 text-muted-foreground">
                       <div className="flex items-start gap-2"><CellIcon type={row.gps.type} /> <span>{row.gps.text}</span></div>
                     </td>
-                    <td className="px-5 py-4 bg-accent/5 text-foreground">
+                    <td className="bg-accent/5 px-5 py-4 text-foreground">
                       <div className="flex items-start gap-2"><CellIcon type={row.mineoptic.type} /> <span className="font-medium">{row.mineoptic.text}</span></div>
                     </td>
                     <td className="px-5 py-4 text-muted-foreground">
@@ -183,29 +222,45 @@ function HomePage() {
         </div>
       </Section>
 
-      {/* THE SUITE */}
+      {/* THE SUITE — three products with individual explore links */}
       <Section className="bg-primary text-primary-foreground">
         <SectionTitle
           eyebrow="The Mineoptic Suite"
           title="Three products, one philosophy"
-          lead="Capture what matters, close the gaps, and put intelligence in front of the people making decisions."
+          lead="Capture what matters, close the gaps, and put intelligence in front of the people making decisions. Explore each solution in detail."
         />
         <div className="grid gap-6 md:grid-cols-3">
-          {[
-            { name: "Mineoptic Lite", tag: "Start where the leakage is worst.", text: "Replaces the most error-prone paper workflows — fuel logging and production counting — with a mobile app and visual analytics. Two modules: Mineoptic Fuel and Mineoptic Visual that enable digital logging even in low/no network zones." },
-            { name: "Mineoptic Plus", tag: "Plus the mine's own network.", text: "Everything in Lite, plus near-live fleet tracking built for the mine. Know whether each tipper is running empty, loaded, or parked — and determine productive hours, identify queue and road bottlenecks, even where the public network drops." },
-            { name: "Mineoptic Canvas", tag: "Your mine's digital twin.", text: "A self-service BI canvas purpose-built for mines. Connect Excel, SQL, your ERP, your data server — compose the digital twin of your operations on your own database. Analyze bottlenecks, simulate operations, get competitive." },
-          ].map((p) => (
-            <div key={p.name} className="rounded-xl border border-white/10 bg-white/5 p-7 backdrop-blur transition-all hover:bg-white/10">
-              <h3 className="text-2xl font-bold text-accent">{p.name}</h3>
-              <p className="mt-2 text-sm italic text-primary-foreground/70">{p.tag}</p>
-              <p className="mt-4 text-sm leading-relaxed text-primary-foreground/85">{p.text}</p>
+          {suite.map((p) => (
+            <div key={p.name} className="flex flex-col overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur transition-all hover:bg-white/10">
+              <div className="aspect-[16/10] w-full overflow-hidden bg-white/5">
+                <img
+                  src={p.image}
+                  alt={`${p.name} dashboard preview`}
+                  loading="lazy"
+                  width={1280}
+                  height={800}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-7">
+                <h3 className="text-2xl font-bold text-accent">{p.name}</h3>
+                <p className="mt-2 text-sm italic text-primary-foreground/70">{p.tag}</p>
+                <p className="mt-4 text-sm leading-relaxed text-primary-foreground/85">{p.text}</p>
+                <div className="mt-6">
+                  <Link
+                    to={p.to}
+                    className="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5"
+                  >
+                    Explore {p.name} <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
             </div>
           ))}
         </div>
         <div className="mt-10 text-center">
-          <Link to="/products" className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5">
-            Explore each product in detail <ArrowRight className="h-4 w-4" />
+          <Link to="/products" className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition-colors hover:bg-white/10">
+            Compare the full suite <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </Section>
