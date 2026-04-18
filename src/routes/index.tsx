@@ -258,11 +258,6 @@ function HomePage() {
             </div>
           ))}
         </div>
-        <div className="mt-10 text-center">
-          <Link to="/products" className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition-colors hover:bg-white/10">
-            Compare the full suite <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
       </Section>
 
       {/* WHY CHOOSE */}
