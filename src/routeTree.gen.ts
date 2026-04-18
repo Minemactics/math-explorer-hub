@@ -15,6 +15,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsPlusRouteImport } from './routes/products.plus'
 import { Route as ProductsLiteRouteImport } from './routes/products.lite'
 import { Route as ProductsCanvasRouteImport } from './routes/products.canvas'
@@ -49,6 +50,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ProductsRoute,
+} as any)
 const ProductsPlusRoute = ProductsPlusRouteImport.update({
   id: '/plus',
   path: '/plus',
@@ -75,17 +81,18 @@ export interface FileRoutesByFullPath {
   '/products/canvas': typeof ProductsCanvasRoute
   '/products/lite': typeof ProductsLiteRoute
   '/products/plus': typeof ProductsPlusRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
-  '/products': typeof ProductsRouteWithChildren
   '/resources': typeof ResourcesRoute
   '/products/canvas': typeof ProductsCanvasRoute
   '/products/lite': typeof ProductsLiteRoute
   '/products/plus': typeof ProductsPlusRoute
+  '/products': typeof ProductsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -98,6 +105,7 @@ export interface FileRoutesById {
   '/products/canvas': typeof ProductsCanvasRoute
   '/products/lite': typeof ProductsLiteRoute
   '/products/plus': typeof ProductsPlusRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -111,17 +119,18 @@ export interface FileRouteTypes {
     | '/products/canvas'
     | '/products/lite'
     | '/products/plus'
+    | '/products/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/careers'
     | '/contact'
-    | '/products'
     | '/resources'
     | '/products/canvas'
     | '/products/lite'
     | '/products/plus'
+    | '/products'
   id:
     | '__root__'
     | '/'
@@ -133,6 +142,7 @@ export interface FileRouteTypes {
     | '/products/canvas'
     | '/products/lite'
     | '/products/plus'
+    | '/products/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -188,6 +198,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/': {
+      id: '/products/'
+      path: '/'
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof ProductsRoute
+    }
     '/products/plus': {
       id: '/products/plus'
       path: '/plus'
@@ -216,12 +233,14 @@ interface ProductsRouteChildren {
   ProductsCanvasRoute: typeof ProductsCanvasRoute
   ProductsLiteRoute: typeof ProductsLiteRoute
   ProductsPlusRoute: typeof ProductsPlusRoute
+  ProductsIndexRoute: typeof ProductsIndexRoute
 }
 
 const ProductsRouteChildren: ProductsRouteChildren = {
   ProductsCanvasRoute: ProductsCanvasRoute,
   ProductsLiteRoute: ProductsLiteRoute,
   ProductsPlusRoute: ProductsPlusRoute,
+  ProductsIndexRoute: ProductsIndexRoute,
 }
 
 const ProductsRouteWithChildren = ProductsRoute._addFileChildren(
