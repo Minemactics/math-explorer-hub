@@ -1,12 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/minematics-logo.png";
 
+const productLinks = [
+  { to: "/products/lite" as const, label: "Mineoptic Lite" },
+  { to: "/products/plus" as const, label: "Mineoptic Plus" },
+  { to: "/products/canvas" as const, label: "Mineoptic Canvas" },
+];
+
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-border bg-primary text-primary-foreground">
       <div className="container-page grid gap-10 py-14 md:grid-cols-4">
         <div className="md:col-span-2">
-          <img src={logo} alt="Minematics" className="h-10 w-auto bg-white/95 rounded p-1.5" />
+          <img src={logo} alt="Minematics" className="h-10 w-auto rounded bg-white/95 p-1.5" />
           <p className="mt-4 max-w-md text-sm text-primary-foreground/75">
             Minematics builds Mineoptic — a purpose-built mining intelligence
             platform. Visibility • Connectivity • Accuracy • Granularity • Adoptability.
@@ -15,10 +21,18 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wider text-accent">Product</h4>
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
-            <li><Link to="/products" className="hover:text-accent">Mineoptic Lite</Link></li>
-            <li><Link to="/products" className="hover:text-accent">Mineoptic Plus</Link></li>
-            <li><Link to="/products" className="hover:text-accent">Mineoptic Canvas</Link></li>
-            <li><Link to="/resources" className="hover:text-accent">Resources</Link></li>
+            {productLinks.map((link) => (
+              <li key={link.to}>
+                <Link to={link.to} className="hover:text-accent">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link to="/resources" className="hover:text-accent">
+                Resources
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
