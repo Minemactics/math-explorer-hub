@@ -1,12 +1,9 @@
-import { createFileRoute, redirect } from "@tanstack/react-router";
+import { Outlet, createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/products")({
-  beforeLoad: () => {
-    throw redirect({ to: "/products/lite" });
-  },
-  component: ProductsRedirect,
+  component: ProductsLayout,
 });
 
-function ProductsRedirect() {
-  return null;
+function ProductsLayout() {
+  return <Outlet />;
 }
