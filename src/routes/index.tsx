@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Wifi, Eye, Target, Layers, Check, X, Minus } from "lucide-react";
+import { ArrowRight, Wifi, Target, Layers, Users, Check, X, Minus } from "lucide-react";
 import heroImg from "@/assets/hero-mine.jpg";
 import overviewIllustration from "@/assets/illustration-overview.png";
 import dashboardLite from "@/assets/dashboard-lite.png";
@@ -22,10 +22,10 @@ export const Route = createFileRoute("/")({
 });
 
 const pillars = [
-  { icon: Eye, name: "Visibility", text: "A map view is not visibility. Visibility is knowing which excavator is idling, which tipper is queued, which route is congested. Mineoptic establishes relationships between assets — not just positions — so bottlenecks surface instead of hide." },
   { icon: Wifi, name: "Connectivity", text: "Mines don't choose where the network reaches. Deep pits, underground drives, remote dumps — the signal drops where the action happens. Offline capture, deferred sync with timestamps that don't lie, and a network design that doesn't wait on a telecom operator." },
   { icon: Target, name: "Accuracy", text: "Decisions are only as relevant as the data is accurate. We don't rely on accuracy under standard circumstances — we build alternate mechanisms to obtain the data essential for decisions like distances between assets and road conditions." },
   { icon: Layers, name: "Granularity", text: "The difference between 'trip logged' and 'five buckets, 3m 40s per bucket, 2m 10s queue at crusher' is the difference between a report and a decision. Mineoptic captures the cycle so managers can answer the question that matters." },
+  { icon: Users, name: "Adoptability", text: "A system only works if the people on the ground actually use it. Mineoptic is built for operators, supervisors, and managers who don't have time for training manuals — simple workflows, familiar interfaces, and dashboards that answer questions instead of raising new ones." },
 ];
 
 const wrong = [
