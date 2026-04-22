@@ -17,7 +17,7 @@ export const Route = createFileRoute("/careers")({
 const why = [
   { t: "Real-world impact.", d: "Our software runs in pits, on haul roads, at weighbridges. The feedback loop is fast and tangible." },
   { t: "Hard, useful problems.", d: "Offline-first sync, computer vision on dusty cameras, digital-twin modelling on customer databases — the problems are substantive." },
-  { t: "Purpose-built culture.", d: "We don't build generic — we go deep on mining. If the domain interests you, you'll grow fast." },
+  { t: "Purpose-built culture.", d: "We do not build generic — we go deep on mining. If the domain interests you, you will grow fast." },
   { t: "Ownership.", d: "Small teams, wide scope, visible impact on customers." },
 ];
 
@@ -40,14 +40,14 @@ function CareersPage() {
           <p className="mt-6 max-w-3xl text-lg text-primary-foreground/85 md:text-xl">
             Mining runs the world — the steel in every building, the copper in every wire, the coal still
             running a sizeable share of the grid. The work is essential. It also runs, far more than outsiders
-            realise, on paper cards and rule-of-thumb. We think that's a problem worth solving, and we'd like
+            realise, on paper cards and rule-of-thumb. We think that is a problem worth solving, and we would like
             company on the way.
           </p>
         </div>
       </section>
 
       <Section>
-        <SectionTitle eyebrow="Why Minematics" title="What you'll find here" />
+        <SectionTitle eyebrow="Why Minematics" title="What you will find here" />
         <div className="grid gap-5 md:grid-cols-2">
           {why.map((w) => (
             <div key={w.t} className="rounded-xl border border-border bg-card p-6 shadow-card">
@@ -81,8 +81,8 @@ function CareersPage() {
           <p className="mt-4 text-base text-foreground/85">
             Send your CV and a short note — why mining, why Minematics — to{" "}
             <a href="mailto:careers@minematics.com" className="font-semibold text-accent hover:underline">careers@minematics.com</a>.
-            If there's a specific open role you're targeting, mention it in the subject line. If there isn't,
-            tell us what you'd want to work on; speculative applications are welcome.
+            If there is a specific open role you are targeting, mention it in the subject line. If there is not,
+            tell us what you would want to work on; speculative applications are welcome.
           </p>
           <a href="mailto:careers@minematics.com" className="mt-8 inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground shadow-glow hover:-translate-y-0.5 transition-transform">
             Email careers@minematics.com

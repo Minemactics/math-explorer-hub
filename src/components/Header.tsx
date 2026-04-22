@@ -13,7 +13,7 @@ const nav = [
 
 const productLinks = [
   { to: "/products/lite" as const, label: "Mineoptic Lite", description: "Fuel logging and production counting" },
-  { to: "/products/plus" as const, label: "Mineoptic Plus", description: "Fleet tracking on the mine's own network" },
+  { to: "/products/plus" as const, label: "Mineoptic Plus", description: "Fleet tracking on the mines own network" },
   { to: "/products/canvas" as const, label: "Mineoptic Canvas", description: "Digital twin and mining BI canvas" },
 ];
 

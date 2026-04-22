@@ -6,10 +6,10 @@ import { Section, Eyebrow } from "@/components/Section";
 export const Route = createFileRoute("/products/plus")({
   head: () => ({
     meta: [
-      { title: "Mineoptic Plus — Fleet tracking on the mine's own network | Minematics" },
+      { title: "Mineoptic Plus — Fleet tracking on the mines own network | Minematics" },
       { name: "description", content: "Everything in Lite, plus near-live fleet tracking with status (empty, loaded, idle, maintenance) — designed for low-network mine zones." },
       { property: "og:title", content: "Mineoptic Plus — Status, not just position." },
-      { property: "og:description", content: "Near-live fleet intelligence on the mine's own network." },
+      { property: "og:description", content: "Near-live fleet intelligence on the mines own network." },
       { property: "og:image", content: dashboardPlus },
       { name: "twitter:image", content: dashboardPlus },
     ],
@@ -21,22 +21,22 @@ const plusIncluded = [
   { t: "Everything in Mineoptic Lite.", d: "Mineoptic Fuel and Mineoptic Visual, fully integrated." },
   { t: "Near-live fleet tracking.", d: "Every truck, every shift — with status, not just position." },
   { t: "Status classification.", d: "Empty, loaded, in maintenance, idle — automatically inferred and displayed." },
-  { t: "Low-network operation.", d: "Designed to work inside the mine's own connectivity fabric, not dependent on third-party GSM towers." },
+  { t: "Low-network operation.", d: "Designed to work inside the mines own connectivity fabric, not dependent on third-party GSM towers." },
   { t: "Time-synced asset view.", d: "Stationary assets like excavators and weighbridges report on time, so the whole mine is on a single clock." },
 ];
 
 const plusProblems = [
-  "Standard GPS trackers report a dot on a map and call it visibility — but they don't tell you whether the dot is hauling ore, running empty back, or parked for service.",
+  "Standard GPS trackers report a dot on a map and call it visibility — but they do not tell you whether the dot is hauling ore, running empty back, or parked for service.",
   "Trackers depend on public GSM towers, which take weeks to install, months to maintain, and never quite reach the pit floor.",
   "Offline trackers cache data and dump it late. Stationary assets — excavators, weighbridges — lose their place in the timeline, and the whole dataset goes out of sync.",
   "Accuracy of regular GPS tracking devices is not reliable enough to infer decent conclusions, hence limiting managers from making good decisions.",
-  "Managers who can't size the tipper fleet per excavator because the data has never been granular enough to decide.",
+  "Managers who cannot size the tipper fleet per excavator because the data has never been granular enough to decide.",
   "Managers end up interpreting raw tracker feeds on their own, adding cognitive load instead of removing it. The map looks impressive; the insight is missing.",
   "Dealer-driven GPS solutions deliver manually collected solutions in digital form — without ever leveraging what the technology could actually do.",
 ];
 
 const plusDifferent = [
-  { t: "Status, not just position.", d: "A truck isn't just at a coordinate — it's at a state. Empty, full, maintenance, idle with durations." },
+  { t: "Status, not just position.", d: "A truck is not just at a coordinate — it is at a state. Empty, full, maintenance, idle with durations." },
   { t: "Adaptive connectivity.", d: "Built to operate on mine-controlled connectivity, so new zones and assets can be onboarded without waiting on a telecom or network rollout." },
   { t: "Time-synced data model.", d: "Every asset — moving or stationary — lands on the same timeline, so reconciliation is automatic." },
   { t: "Operations-ready dashboards.", d: "The manager opens the screen and gets the answer, not the raw feed." },
@@ -73,11 +73,11 @@ function PlusPage() {
         <div className="container-page py-20 md:py-28">
           <Eyebrow>Mineoptic Plus</Eyebrow>
           <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
-            Everything in Lite. <span className="text-gradient">Plus the mine's own network.</span>
+            Everything in Lite. <span className="text-gradient">Plus the mines own network.</span>
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-primary-foreground/85 md:text-xl">
-            Near-live fleet tracking that's designed — from the radio layer up — for the realities
-            of the mine. It tells you not only where each tipper is, but what state it's in:
+            Near-live fleet tracking that is designed — from the radio layer up — for the realities
+            of the mine. It tells you not only where each tipper is, but what state it is in:
             running empty, loaded, or parked in the maintenance yard.
           </p>
           <div className="mt-8 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-teal-gradient text-white"><Radio className="h-6 w-6" /></div>
@@ -100,7 +100,7 @@ function PlusPage() {
       <Section className="bg-subtle-gradient">
         <div className="grid gap-10 md:grid-cols-2">
           <div className="rounded-2xl border border-border bg-card p-7 shadow-card">
-            <h2 className="text-2xl font-bold">What's included</h2>
+            <h2 className="text-2xl font-bold">What is included</h2>
             <ul className="mt-4 space-y-3">
               {plusIncluded.map((x, i) => (
                 <li key={i} className="flex gap-3">
