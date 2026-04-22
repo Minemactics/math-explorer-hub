@@ -5,7 +5,7 @@ import { Section, Eyebrow } from "@/components/Section";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Minematics" },
+      { title: "Contact Us | Minematics" },
       { name: "description", content: "Tell us about your mine. We will tell you where Mineoptic fits. Sales, support, partnerships and press." },
       { property: "og:title", content: "Contact Minematics" },
       { property: "og:description", content: "Talk to sales, customer support, partnerships, or general enquiries." },
@@ -25,7 +25,7 @@ const blocks = [
   },
   {
     icon: LifeBuoy, title: "Customer support",
-    body: "Existing customers — our support team is available around the clock for deployed Mineoptic sites.",
+    body: "Existing customers, our support team is available around the clock for deployed Mineoptic sites.",
     items: [
       { l: "Email", v: "support@minematics.com", href: "mailto:support@minematics.com" },
       { l: "Support portal", v: "support.minematics.com", href: "https://support.minematics.com" },
@@ -33,14 +33,14 @@ const blocks = [
   },
   {
     icon: Handshake, title: "Partnerships",
-    body: "System integrators, OEMs, and consultancies working with mines — we would like to hear from you.",
+    body: "System integrators, OEMs, and consultancies working with mines, we would like to hear from you.",
     items: [
       { l: "Email", v: "partners@minematics.com", href: "mailto:partners@minematics.com" },
     ],
   },
   {
     icon: Phone, title: "General enquiries & press",
-    body: "Anything else — story ideas, media, partnerships, or just hello.",
+    body: "Anything else, story ideas, media, partnerships, or just hello.",
     items: [
       { l: "Email", v: "hello@minematics.com", href: "mailto:hello@minematics.com" },
     ],

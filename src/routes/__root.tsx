@@ -31,8 +31,8 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Minematics — Mining Intelligence, Purpose-Built" },
-      { name: "description", content: "Minematics builds Mineoptic — granular, real-time mining intelligence from the pit to the plant." },
+      { title: "Minematics: Mining Intelligence, Purpose-Built" },
+      { name: "description", content: "Minematics builds Mineoptic: granular, real-time mining intelligence from the pit to the plant." },
       { name: "author", content: "Minematics" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

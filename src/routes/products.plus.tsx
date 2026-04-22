@@ -6,9 +6,9 @@ import { Section, Eyebrow } from "@/components/Section";
 export const Route = createFileRoute("/products/plus")({
   head: () => ({
     meta: [
-      { title: "Mineoptic Plus — Fleet tracking on the mines own network | Minematics" },
-      { name: "description", content: "Everything in Lite, plus near-live fleet tracking with status (empty, loaded, idle, maintenance) — designed for low-network mine zones." },
-      { property: "og:title", content: "Mineoptic Plus — Status, not just position." },
+      { title: "Mineoptic Plus, Fleet tracking on the mines own network | Minematics" },
+      { name: "description", content: "Everything in Lite, plus near-live fleet tracking with status (empty, loaded, idle, maintenance), designed for low-network mine zones." },
+      { property: "og:title", content: "Mineoptic Plus, Status, not just position." },
       { property: "og:description", content: "Near-live fleet intelligence on the mines own network." },
       { property: "og:image", content: dashboardPlus },
       { name: "twitter:image", content: dashboardPlus },
@@ -19,35 +19,35 @@ export const Route = createFileRoute("/products/plus")({
 
 const plusIncluded = [
   { t: "Everything in Mineoptic Lite.", d: "Mineoptic Fuel and Mineoptic Visual, fully integrated." },
-  { t: "Near-live fleet tracking.", d: "Every truck, every shift — with status, not just position." },
-  { t: "Status classification.", d: "Empty, loaded, in maintenance, idle — automatically inferred and displayed." },
+  { t: "Near-live fleet tracking.", d: "Every truck, every shift, with status, not just position." },
+  { t: "Status classification.", d: "Empty, loaded, in maintenance, idle, automatically inferred and displayed." },
   { t: "Low-network operation.", d: "Designed to work inside the mines own connectivity fabric, not dependent on third-party GSM towers." },
   { t: "Time-synced asset view.", d: "Stationary assets like excavators and weighbridges report on time, so the whole mine is on a single clock." },
 ];
 
 const plusProblems = [
-  "Standard GPS trackers report a dot on a map and call it visibility — but they do not tell you whether the dot is hauling ore, running empty back, or parked for service.",
+  "Standard GPS trackers report a dot on a map and call it visibility, but they do not tell you whether the dot is hauling ore, running empty back, or parked for service.",
   "Trackers depend on public GSM towers, which take weeks to install, months to maintain, and never quite reach the pit floor.",
-  "Offline trackers cache data and dump it late. Stationary assets — excavators, weighbridges — lose their place in the timeline, and the whole dataset goes out of sync.",
+  "Offline trackers cache data and dump it late. Stationary assets, excavators, weighbridges, lose their place in the timeline, and the whole dataset goes out of sync.",
   "Accuracy of regular GPS tracking devices is not reliable enough to infer decent conclusions, hence limiting managers from making good decisions.",
   "Managers who cannot size the tipper fleet per excavator because the data has never been granular enough to decide.",
   "Managers end up interpreting raw tracker feeds on their own, adding cognitive load instead of removing it. The map looks impressive; the insight is missing.",
-  "Dealer-driven GPS solutions deliver manually collected solutions in digital form — without ever leveraging what the technology could actually do.",
+  "Dealer-driven GPS solutions deliver manually collected solutions in digital form, without ever leveraging what the technology could actually do.",
 ];
 
 const plusDifferent = [
-  { t: "Status, not just position.", d: "A truck is not just at a coordinate — it is at a state. Empty, full, maintenance, idle with durations." },
+  { t: "Status, not just position.", d: "A truck is not just at a coordinate, it is at a state. Empty, full, maintenance, idle with durations." },
   { t: "Adaptive connectivity.", d: "Built to operate on mine-controlled connectivity, so new zones and assets can be onboarded without waiting on a telecom or network rollout." },
-  { t: "Time-synced data model.", d: "Every asset — moving or stationary — lands on the same timeline, so reconciliation is automatic." },
+  { t: "Time-synced data model.", d: "Every asset, moving or stationary, lands on the same timeline, so reconciliation is automatic." },
   { t: "Operations-ready dashboards.", d: "The manager opens the screen and gets the answer, not the raw feed." },
   { t: "Integrated with Lite.", d: "Fuel events, visual counts, and fleet status all reconcile in one system." },
 ];
 
 const plusOutcomes = [
-  "Near-real-time fleet utilisation by state — how much of the hour each truck spent loaded vs empty vs idle.",
-  "Bottleneck mapping — where queues are forming, trucks moving slow, and for how long.",
-  "Cycle-time accountability — which crew, which excavator, which route is pulling the shift average down.",
-  "Connectivity coverage the mine controls — and can extend — without waiting on a telecom operator.",
+  "Near-real-time fleet utilisation by state, how much of the hour each truck spent loaded vs empty vs idle.",
+  "Bottleneck mapping, where queues are forming, trucks moving slow, and for how long.",
+  "Cycle-time accountability, which crew, which excavator, which route is pulling the shift average down.",
+  "Connectivity coverage the mine controls, and can extend, without waiting on a telecom operator.",
 ];
 
 const plusFor = [
@@ -76,7 +76,7 @@ function PlusPage() {
             Everything in Lite. <span className="text-gradient">Plus the mines own network.</span>
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-primary-foreground/85 md:text-xl">
-            Near-live fleet tracking that is designed — from the radio layer up — for the realities
+            Near-live fleet tracking that is designed, from the radio layer up, for the realities
             of the mine. It tells you not only where each tipper is, but what state it is in:
             running empty, loaded, or parked in the maintenance yard.
           </p>

@@ -6,9 +6,9 @@ import { Section, Eyebrow } from "@/components/Section";
 export const Route = createFileRoute("/products/canvas")({
   head: () => ({
     meta: [
-      { title: "Mineoptic Canvas — Your mines digital twin, on your database | Minematics" },
-      { name: "description", content: "A self-service BI canvas built for mines. Compose your operations digital twin from Excel, SQL, ERP and data servers — and keep the data on your own infrastructure." },
-      { property: "og:title", content: "Mineoptic Canvas — Your mines digital twin." },
+      { title: "Mineoptic Canvas: Your mines digital twin, on your database | Minematics" },
+      { name: "description", content: "A self-service BI canvas built for mines. Compose your operations digital twin from Excel, SQL, ERP and data servers, and keep the data on your own infrastructure." },
+      { property: "og:title", content: "Mineoptic Canvas: Your mines digital twin." },
       { property: "og:description", content: "Self-service BI built specifically for mines, with data sovereignty by design." },
       { property: "og:image", content: dashboardCanvas },
       { name: "twitter:image", content: dashboardCanvas },
@@ -18,17 +18,17 @@ export const Route = createFileRoute("/products/canvas")({
 });
 
 const canvasFeatures = [
-  { t: "Mining-first vocabulary.", d: "Faces, benches, haul roads, crushers, tips — not just rows and columns." },
+  { t: "Mining-first vocabulary.", d: "Faces, benches, haul roads, crushers, tips, not just rows and columns." },
   { t: "Digital twin composition.", d: "Drop in assets, routes, and zones to build an operations view that mirrors the mine." },
-  { t: "Multi-source data.", d: "Excel, CSV, SQL, data servers, ERP — connect it and reconcile it in one place." },
+  { t: "Multi-source data.", d: "Excel, CSV, SQL, data servers, ERP, connect it and reconcile it in one place." },
   { t: "Data sovereignty by design.", d: "Point Canvas at your own database. Nothing sensitive has to travel to a vendor cloud." },
-  { t: "Self-service for operations.", d: "Planners, supervisors, and managers can build their own views — no long IT backlog." },
-  { t: "Non-linear navigation.", d: "Jump across assets, locations, functions, and the overall mine directly — without going home or searching for the relevant dashboard." },
+  { t: "Self-service for operations.", d: "Planners, supervisors, and managers can build their own views, no long IT backlog." },
+  { t: "Non-linear navigation.", d: "Jump across assets, locations, functions, and the overall mine directly, without going home or searching for the relevant dashboard." },
   { t: "Object-linked dashboards.", d: "Details about assets, locations, functions and the mine intuitively linked, so managers draw inferences from a single page." },
 ];
 
 const canvasProblems = [
-  "Data scattered across Excel workbooks, dispatch software, fuel logs, and the weighbridge — with no common view.",
+  "Data scattered across Excel workbooks, dispatch software, fuel logs, and the weighbridge, with no common view.",
   "A generic BI tool that does not speak mining, so every dashboard is built from scratch.",
   "Production data leaving the site for a vendor cloud, which compliance and security teams will not sign off on.",
   "End-of-shift decisions because there is no live aggregation layer that reconciles across sources.",
@@ -37,12 +37,12 @@ const canvasProblems = [
 ];
 
 const canvasBuild = [
-  { t: "Production dashboards.", d: "Tonnes per shift, per face, per crew — reconciled across dispatch, weighbridge, and visual counts." },
-  { t: "Fleet utilisation views.", d: "Truck states, cycle times, queue times — rolled up to fleet, route, or excavator level." },
-  { t: "Fuel and cost dashboards.", d: "Fuel per tonne, per truck, per route — reconciled against the Mineoptic Fuel ledger." },
-  { t: "Bottleneck maps.", d: "Queue times overlaid on the mine layout — so the problem is obvious at a glance." },
-  { t: "Planning vs actual.", d: "Plan adherence by shift, by face, by route — in a single view." },
-  { t: "Mine View.", d: "Where everything happens, not in report pages — with search options. Managers can jump to a point of interest without checking various reports." },
+  { t: "Production dashboards.", d: "Tonnes per shift, per face, per crew, reconciled across dispatch, weighbridge, and visual counts." },
+  { t: "Fleet utilisation views.", d: "Truck states, cycle times, queue times, rolled up to fleet, route, or excavator level." },
+  { t: "Fuel and cost dashboards.", d: "Fuel per tonne, per truck, per route, reconciled against the Mineoptic Fuel ledger." },
+  { t: "Bottleneck maps.", d: "Queue times overlaid on the mine layout, so the problem is obvious at a glance." },
+  { t: "Planning vs actual.", d: "Plan adherence by shift, by face, by route, in a single view." },
+  { t: "Mine View.", d: "Where everything happens, not in report pages, with search options. Managers can jump to a point of interest without checking various reports." },
 ];
 
 const canvasFor = [
@@ -69,11 +69,11 @@ function CanvasPage() {
         <div className="container-page py-20 md:py-28">
           <Eyebrow>Mineoptic Canvas</Eyebrow>
           <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
-            Your mines digital twin — <span className="text-gradient">on your database.</span>
+            Your mines digital twin, <span className="text-gradient">on your database.</span>
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-primary-foreground/85 md:text-xl">
             A self-service BI tool built specifically for mines. Compose the digital twin of the
-            operation — pits, routes, faces, fleets, plants — and wire it to whatever data you
+            operation, pits, routes, faces, fleets, plants, and wire it to whatever data you
             already have. Stored on your mines own database, so the data never has to leave your control.
           </p>
           <div className="mt-8 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-teal-gradient text-white"><Database className="h-6 w-6" /></div>

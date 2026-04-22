@@ -14,7 +14,7 @@ export function Footer() {
         <div className="md:col-span-2">
           <img src={logo} alt="Minematics" className="h-10 w-auto rounded bg-white/95 p-1.5" />
           <p className="mt-4 max-w-md text-sm text-primary-foreground/75">
-            Minematics builds Mineoptic — a purpose-built mining intelligence
+            Minematics builds Mineoptic, a purpose-built mining intelligence
             platform. Connectivity • Accuracy • Granularity • Adoptability.
           </p>
         </div>
@@ -48,7 +48,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col gap-2 py-5 text-xs text-primary-foreground/60 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Minematics Technologies. Hyderabad, Telangana, India.</p>
-          <p>Mineoptic — Mining Intelligence, Purpose-Built.</p>
+          <p>Mineoptic: Mining Intelligence, Purpose-Built.</p>
         </div>
       </div>
     </footer>

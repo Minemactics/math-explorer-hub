@@ -5,9 +5,9 @@ import { Section, SectionTitle, Eyebrow } from "@/components/Section";
 export const Route = createFileRoute("/resources")({
   head: () => ({
     meta: [
-      { title: "Resources — Case Studies, Use Cases, Blogs & E-books | Minematics" },
+      { title: "Resources: Case Studies, Use Cases, Blogs & E-books | Minematics" },
       { name: "description", content: "Real operations, real numbers. Case studies, use cases, blogs and e-books focused on Connectivity, Accuracy, Granularity, and Adoptability." },
-      { property: "og:title", content: "Resources — Minematics" },
+      { property: "og:title", content: "Resources | Minematics" },
       { property: "og:description", content: "Case studies, use cases, blogs and e-books from the field." },
     ],
   }),
@@ -16,25 +16,25 @@ export const Route = createFileRoute("/resources")({
 
 const cases = [
   { n: 1, title: "From paper fuel slips to a reconciled fuel ledger", sector: "Open-cast coal", module: "Mineoptic Fuel", pillar: "Adoptability, Granularity",
-    body: "The mine was logging fuel on paper cards at three bowsers, reconciling manually at shift end, and losing an estimated 4–6 cards per week. After rolling out Mineoptic Fuel, the site moved to tap-and-snap capture at the bowser — with offline sync to handle the dead zone at the back-of-pit bowser — and eliminated end-of-shift transcription entirely. Fuel reconciliation variance dropped sharply and the fuel-per-tonne number became trusted at the management review." },
+    body: "The mine was logging fuel on paper cards at three bowsers, reconciling manually at shift end, and losing an estimated 4–6 cards per week. After rolling out Mineoptic Fuel, the site moved to tap-and-snap capture at the bowser, with offline sync to handle the dead zone at the back-of-pit bowser, and eliminated end-of-shift transcription entirely. Fuel reconciliation variance dropped sharply and the fuel-per-tonne number became trusted at the management review." },
   { n: 2, title: "Sizing the tipper fleet with bucket-level data", sector: "Iron ore", module: "Mineoptic Visual", pillar: "Connectivity, Granularity",
-    body: "The planning team had been sizing the tipper fleet per excavator using trip counts and average cycle time — numbers the team did not fully trust. Mineoptic Visual started reporting bucket counts per truck, load time per bucket, and queue time at the excavator. Within a shift, the manager could see which excavators were starving their fleet and which had excess tippers. The fleet was rebalanced within a week." },
+    body: "The planning team had been sizing the tipper fleet per excavator using trip counts and average cycle time, numbers the team did not fully trust. Mineoptic Visual started reporting bucket counts per truck, load time per bucket, and queue time at the excavator. Within a shift, the manager could see which excavators were starving their fleet and which had excess tippers. The fleet was rebalanced within a week." },
   { n: 3, title: "Fleet status visibility in a low-network pit", sector: "Limestone", module: "Mineoptic Plus", pillar: "Connectivity, Accuracy",
-    body: "A standard GPS tracker deployment had been live for two years but never used by the operations manager — the public GSM coverage dropped in the deepest bench, so the pit floor was effectively invisible, and stationary assets synced late. Mineoptic Plus was deployed on the mines own connectivity fabric. The pit floor came online, time-sync across moving and stationary assets held up, and the manager began using the fleet-status view as the primary operational screen." },
+    body: "A standard GPS tracker deployment had been live for two years but never used by the operations manager, the public GSM coverage dropped in the deepest bench, so the pit floor was effectively invisible, and stationary assets synced late. Mineoptic Plus was deployed on the mines own connectivity fabric. The pit floor came online, time-sync across moving and stationary assets held up, and the manager began using the fleet-status view as the primary operational screen." },
   { n: 4, title: "One canvas for production, fuel, and fleet", sector: "Bauxite", module: "Mineoptic Canvas", pillar: "Accuracy, Adoptability",
-    body: "Production data lived in dispatch software, fuel data in Excel, and weighbridge data in a separate SQL database — each reconciled weekly, none of them live. Mineoptic Canvas was connected to all three sources with the data layer on the mines own server. The operations team built a single shift dashboard that reconciled the three sources automatically. The weekly reconciliation meeting was retired." },
+    body: "Production data lived in dispatch software, fuel data in Excel, and weighbridge data in a separate SQL database, each reconciled weekly, none of them live. Mineoptic Canvas was connected to all three sources with the data layer on the mines own server. The operations team built a single shift dashboard that reconciled the three sources automatically. The weekly reconciliation meeting was retired." },
 ];
 
 const useCases = [
   { group: "Production and dispatch", items: [
-    { t: "Real-time shift production.", d: "Tonnes by face, by crew, by route — reconciled across dispatch, weighbridge, and Visual counts." },
+    { t: "Real-time shift production.", d: "Tonnes by face, by crew, by route, reconciled across dispatch, weighbridge, and Visual counts." },
     { t: "Plan vs actual adherence.", d: "Shift plan overlaid on actuals, updated through the shift, not at the end." },
     { t: "Bucket-level cycle tracking.", d: "Know exactly how many buckets each truck took and how long each one cost." },
   ]},
   { group: "Fleet management", items: [
     { t: "Fleet state utilisation.", d: "Hour-by-hour breakdown of loaded, empty, idle, and in-maintenance state." },
     { t: "Tipper fleet sizing per excavator.", d: "Answered properly for the first time, from bucket and queue data." },
-    { t: "Bottleneck detection.", d: "Queue length and queue time at excavator, weighbridge, crusher, loadout — flagged as they form." },
+    { t: "Bottleneck detection.", d: "Queue length and queue time at excavator, weighbridge, crusher, loadout, flagged as they form." },
   ]},
   { group: "Fuel and cost control", items: [
     { t: "Bowser-level fuel ledger.", d: "Every issue, timestamped and reconciled, with no paper in the loop." },
@@ -44,7 +44,7 @@ const useCases = [
   { group: "Operations reporting and governance", items: [
     { t: "Shift reports in minutes, not hours.", d: "No transcription, no reconciliation, no missing cards." },
     { t: "Audit-ready data trail.", d: "Every event carries a capture timestamp and an upload timestamp." },
-    { t: "Cross-section reconciliation.", d: "Pit, weighbridge, dispatch, fuel — reconciled in one canvas." },
+    { t: "Cross-section reconciliation.", d: "Pit, weighbridge, dispatch, fuel, reconciled in one canvas." },
   ]},
   { group: "Safety and compliance (supporting)", items: [
     { t: "Maintenance yard visibility.", d: "Know which assets are in the yard and for how long, without radio calls." },
@@ -53,18 +53,18 @@ const useCases = [
 ];
 
 const blogs = [
-  { t: "Why a map view is not visibility", d: "Every GPS dashboard looks impressive on day one. Two months later, the manager has stopped opening it. We look at why — and what visibility actually has to deliver to stay useful." },
-  { t: "The real cost of pen-and-paper fuel logging", d: "Everyone knows paper fuel cards are error-prone. We quantify what that actually costs across a year — in missed reconciliations, distorted fuel-per-tonne numbers, and end-of-shift hours spent transcribing." },
+  { t: "Why a map view is not visibility", d: "Every GPS dashboard looks impressive on day one. Two months later, the manager has stopped opening it. We look at why, and what visibility actually has to deliver to stay useful." },
+  { t: "The real cost of pen-and-paper fuel logging", d: "Everyone knows paper fuel cards are error-prone. We quantify what that actually costs across a year, in missed reconciliations, distorted fuel-per-tonne numbers, and end-of-shift hours spent transcribing." },
   { t: "How many tippers per excavator? The question nobody could answer", d: "Sizing the tipper fleet per excavator has historically been a rule-of-thumb exercise because the data was not there. With bucket and queue data, the answer becomes calculable. We walk through the method." },
-  { t: "Why mines outgrow their GPS trackers", d: "Standard GPS is built for fleets on public roads. Mines are different — dead zones, stationary assets, asset relationships that matter more than coordinates. We break down where trackers run out of road." },
-  { t: "Designing for the dead zone", d: "The deepest bench, the underground drive, the back-of-pit bowser — every mine has a dead zone where it matters most. We discuss what offline-first capture really requires to stay trustworthy." },
-  { t: "Adoption is the hardest pillar", d: "Connectivity, Accuracy, Granularity are all engineering problems. Adoptability is a design problem — and it is the one that decides whether the system gets used. Here is how we approach it." },
+  { t: "Why mines outgrow their GPS trackers", d: "Standard GPS is built for fleets on public roads. Mines are different, dead zones, stationary assets, asset relationships that matter more than coordinates. We break down where trackers run out of road." },
+  { t: "Designing for the dead zone", d: "The deepest bench, the underground drive, the back-of-pit bowser, every mine has a dead zone where it matters most. We discuss what offline-first capture really requires to stay trustworthy." },
+  { t: "Adoption is the hardest pillar", d: "Connectivity, Accuracy, Granularity are all engineering problems. Adoptability is a design problem, and it is the one that decides whether the system gets used. Here is how we approach it." },
 ];
 
 const ebooks = [
-  { t: "The Four Pillars of Mining Intelligence", sub: "The flagship Minematics guide.", d: "A detailed walk-through of Connectivity, Accuracy, Granularity, and Adoptability — why these four, how they interact, and how to score your current setup against each one. Includes a pillar-by-pillar assessment framework and representative operational metrics." },
-  { t: "From Paper to Digital — A Practical Playbook for Mines", d: "A practical guide to retiring paper-based data capture in a mine — which workflows to start with, how to handle the offline zones, how to win the crew over, and how to measure the return within one quarter." },
-  { t: "Sizing the Tipper Fleet — A Data-Driven Method", d: "The planning question that rule-of-thumb has never answered well. This e-book walks through a data-driven method using bucket counts, load times, and queue times — and shows how granular visual analytics makes it practical." },
+  { t: "The Four Pillars of Mining Intelligence", sub: "The flagship Minematics guide.", d: "A detailed walk-through of Connectivity, Accuracy, Granularity, and Adoptability, why these four, how they interact, and how to score your current setup against each one. Includes a pillar-by-pillar assessment framework and representative operational metrics." },
+  { t: "From Paper to Digital, A Practical Playbook for Mines", d: "A practical guide to retiring paper-based data capture in a mine, which workflows to start with, how to handle the offline zones, how to win the crew over, and how to measure the return within one quarter." },
+  { t: "Sizing the Tipper Fleet, A Data-Driven Method", d: "The planning question that rule-of-thumb has never answered well. This e-book walks through a data-driven method using bucket counts, load times, and queue times, and shows how granular visual analytics makes it practical." },
   { t: "Choosing Between GPS, Mineoptic, and Enterprise FMS", d: "A candid buyers guide for mines deciding how far up the stack to go. What each category is actually good at, where each one stops, and how to match the choice to the operation." },
   { t: "Data Sovereignty in Mining Operations", d: "Why production and commercial data should stay inside the mines infrastructure, what data sovereignty by design actually means, and how Mineoptic Canvas is architected to deliver it." },
 ];
@@ -77,7 +77,7 @@ function ResourcesPage() {
           <Eyebrow>Resources</Eyebrow>
           <h1 className="mt-5 max-w-4xl text-4xl font-bold md:text-6xl">What we are seeing in the field.</h1>
           <p className="mt-6 max-w-3xl text-lg text-primary-foreground/85 md:text-xl">
-            Case studies, use cases, blogs, and e-books — all focused on the pillars that drive
+            Case studies, use cases, blogs, and e-books, all focused on the pillars that drive
             productivity: Connectivity, Accuracy, Granularity, Adoptability.
           </p>
         </div>
@@ -87,7 +87,7 @@ function ResourcesPage() {
         <SectionTitle
           eyebrow="Case studies"
           title="Real operations, real numbers"
-          lead="Each case study walks through the before-state, the pillar we addressed, the modules deployed, and the operational outcome. Representative case studies — actual customer write-ups are published as they are signed off."
+          lead="Each case study walks through the before-state, the pillar we addressed, the modules deployed, and the operational outcome. Representative case studies, actual customer write-ups are published as they are signed off."
         />
         <div className="grid gap-6 md:grid-cols-2">
           {cases.map((c) => (
@@ -134,7 +134,7 @@ function ResourcesPage() {
         <SectionTitle
           eyebrow="Blogs"
           title="Featured posts"
-          lead="Short, operationally useful pieces on the problems we see in the field — and the thinking behind how Mineoptic solves them."
+          lead="Short, operationally useful pieces on the problems we see in the field, and the thinking behind how Mineoptic solves them."
         />
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {blogs.map((b) => (

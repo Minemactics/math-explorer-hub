@@ -5,8 +5,8 @@ import { Section, SectionTitle, Eyebrow } from "@/components/Section";
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — Build the intelligence layer of mining | Minematics" },
-      { name: "description", content: "Mining runs the world — and far more of it runs on paper than outsiders realise. Help us change that." },
+      { title: "Careers: Build the intelligence layer of mining | Minematics" },
+      { name: "description", content: "Mining runs the world, and far more of it runs on paper than outsiders realise. Help us change that." },
       { property: "og:title", content: "Careers at Minematics" },
       { property: "og:description", content: "Hard, useful problems. Real-world impact. Purpose-built culture." },
     ],
@@ -16,8 +16,8 @@ export const Route = createFileRoute("/careers")({
 
 const why = [
   { t: "Real-world impact.", d: "Our software runs in pits, on haul roads, at weighbridges. The feedback loop is fast and tangible." },
-  { t: "Hard, useful problems.", d: "Offline-first sync, computer vision on dusty cameras, digital-twin modelling on customer databases — the problems are substantive." },
-  { t: "Purpose-built culture.", d: "We do not build generic — we go deep on mining. If the domain interests you, you will grow fast." },
+  { t: "Hard, useful problems.", d: "Offline-first sync, computer vision on dusty cameras, digital-twin modelling on customer databases, the problems are substantive." },
+  { t: "Purpose-built culture.", d: "We do not build generic, we go deep on mining. If the domain interests you, you will grow fast." },
   { t: "Ownership.", d: "Small teams, wide scope, visible impact on customers." },
 ];
 
@@ -38,7 +38,7 @@ function CareersPage() {
             Build the <span className="text-gradient">intelligence layer</span> of the mining industry.
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-primary-foreground/85 md:text-xl">
-            Mining runs the world — the steel in every building, the copper in every wire, the coal still
+            Mining runs the world, the steel in every building, the copper in every wire, the coal still
             running a sizeable share of the grid. The work is essential. It also runs, far more than outsiders
             realise, on paper cards and rule-of-thumb. We think that is a problem worth solving, and we would like
             company on the way.
@@ -79,7 +79,7 @@ function CareersPage() {
         <div className="mx-auto max-w-3xl rounded-2xl border border-accent/30 bg-accent/5 p-10 text-center">
           <h2 className="text-3xl font-bold">How to apply</h2>
           <p className="mt-4 text-base text-foreground/85">
-            Send your CV and a short note — why mining, why Minematics — to{" "}
+            Send your CV and a short note, why mining, why Minematics, to{" "}
             <a href="mailto:careers@minematics.com" className="font-semibold text-accent hover:underline">careers@minematics.com</a>.
             If there is a specific open role you are targeting, mention it in the subject line. If there is not,
             tell us what you would want to work on; speculative applications are welcome.

@@ -10,9 +10,9 @@ import { Section, SectionTitle, Eyebrow } from "@/components/Section";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Minematics — Mining Intelligence, Purpose-Built" },
-      { name: "description", content: "See every bucket, every bottleneck, every shift — in real time. Mineoptic gives mines granular, reliable visibility without enterprise FMS cost." },
-      { property: "og:title", content: "Minematics — Mining Intelligence, Purpose-Built" },
+      { title: "Minematics: Mining Intelligence, Purpose-Built" },
+      { name: "description", content: "See every bucket, every bottleneck, every shift, in real time. Mineoptic gives mines granular, reliable visibility without enterprise FMS cost." },
+      { property: "og:title", content: "Minematics: Mining Intelligence, Purpose-Built" },
       { property: "og:description", content: "Granular, real-time mining intelligence from the pit to the plant." },
       { property: "og:image", content: heroImg },
       { name: "twitter:image", content: heroImg },
@@ -22,30 +22,30 @@ export const Route = createFileRoute("/")({
 });
 
 const pillars = [
-  { icon: Wifi, name: "Connectivity", text: "Mines do not choose where the network reaches. Deep pits, underground drives, remote dumps — the signal drops where the action happens. Offline capture, deferred sync with timestamps that do not lie, and a network design that does not wait on a telecom operator." },
-  { icon: Target, name: "Accuracy", text: "Decisions are only as relevant as the data is accurate. We do not rely on accuracy under standard circumstances — we build alternate mechanisms to obtain the data essential for decisions like distances between assets and road conditions." },
+  { icon: Wifi, name: "Connectivity", text: "Mines do not choose where the network reaches. Deep pits, underground drives, remote dumps, the signal drops where the action happens. Offline capture, deferred sync with timestamps that do not lie, and a network design that does not wait on a telecom operator." },
+  { icon: Target, name: "Accuracy", text: "Decisions are only as relevant as the data is accurate. We do not rely on accuracy under standard circumstances, we build alternate mechanisms to obtain the data essential for decisions like distances between assets and road conditions." },
   { icon: Layers, name: "Granularity", text: "The difference between trip logged and five buckets, 3m 40s per bucket, 2m 10s queue at crusher is the difference between a report and a decision. Mineoptic captures the cycle so managers can answer the question that matters." },
-  { icon: Users, name: "Adoptability", text: "A system only works if the people on the ground actually use it. Mineoptic is built for operators, supervisors, and managers who do not have time for training manuals — simple workflows, familiar interfaces, and dashboards that answer questions instead of raising new ones." },
+  { icon: Users, name: "Adoptability", text: "A system only works if the people on the ground actually use it. Mineoptic is built for operators, supervisors, and managers who do not have time for training manuals, simple workflows, familiar interfaces, and dashboards that answer questions instead of raising new ones." },
 ];
 
 const wrong = [
-  "Logging varies across people, shifts, and times of day — the same event gets recorded three different ways.",
+  "Logging varies across people, shifts, and times of day, the same event gets recorded three different ways.",
   "The time an event happens and the time it gets written down rarely match; watches drift, pens fail, cards get lost between hops.",
-  "Paper cards travel through multiple hands before reconciliation — one missing slip can distort the shift report.",
+  "Paper cards travel through multiple hands before reconciliation, one missing slip can distort the shift report.",
   "Manual summarisation introduces its own errors, and the staff doing it are doing mundane, unrewarding work.",
   "Reconciliation across sections (pit, weighbridge, dispatch, fuel) rarely lines up, so the whole dataset becomes non-reliable.",
-  "What gets captured is surface-level — total trips, total tonnage — with no view into queueing, bucket counts, cycle breakup, or bottlenecks.",
+  "What gets captured is surface-level, total trips, total tonnage, with no view into queueing, bucket counts, cycle breakup, or bottlenecks.",
   "GPS trackers show where a truck is, not why it is waiting, how many buckets it took to fill, or which excavator is starving its fleet.",
-  "Generic GPS devices rely on third-party GSM towers and store data offline during dead zones, so stationary assets like excavators and weighbridges report late — destroying time-sync across the mine.",
+  "Generic GPS devices rely on third-party GSM towers and store data offline during dead zones, so stationary assets like excavators and weighbridges report late, destroying time-sync across the mine.",
   "Dealer-driven tracking solutions give managers raw feeds to interpret themselves. The cognitive burden pushes them back to their old paper registers.",
 ];
 
 type Cell = { type: "yes" | "partial" | "no"; text: string };
 const comparison: { capability: string; gps: Cell; mineoptic: Cell; fms: Cell }[] = [
-  { capability: "Asset position", gps: { type: "yes", text: "Yes — positional only" }, mineoptic: { type: "yes", text: "Yes, plus asset relationships" }, fms: { type: "yes", text: "Yes, deeply integrated" } },
+  { capability: "Asset position", gps: { type: "yes", text: "Yes, positional only" }, mineoptic: { type: "yes", text: "Yes, plus asset relationships" }, fms: { type: "yes", text: "Yes, deeply integrated" } },
   { capability: "Cycle granularity (buckets, queue, load time)", gps: { type: "no", text: "No" }, mineoptic: { type: "yes", text: "Yes, via visual analytics" }, fms: { type: "yes", text: "Yes, via OEM integration" } },
-  { capability: "Works in low / no network zones", gps: { type: "partial", text: "Partial — late sync, no timestamps" }, mineoptic: { type: "yes", text: "Yes — sync with preserved timestamps" }, fms: { type: "yes", text: "Yes — private mine network" } },
-  { capability: "Interpreted for operations", gps: { type: "no", text: "No — raw data, manager interprets" }, mineoptic: { type: "yes", text: "Yes — operations-ready" }, fms: { type: "yes", text: "Yes — operations-ready" } },
+  { capability: "Works in low / no network zones", gps: { type: "partial", text: "Partial, late sync, no timestamps" }, mineoptic: { type: "yes", text: "Yes, sync with preserved timestamps" }, fms: { type: "yes", text: "Yes, private mine network" } },
+  { capability: "Interpreted for operations", gps: { type: "no", text: "No, raw data, manager interprets" }, mineoptic: { type: "yes", text: "Yes, operations-ready" }, fms: { type: "yes", text: "Yes, operations-ready" } },
   { capability: "Implementation cost & time", gps: { type: "partial", text: "Low cost, low value" }, mineoptic: { type: "yes", text: "Moderate cost, high value" }, fms: { type: "no", text: "High cost, long deployment" } },
   { capability: "Data sovereignty", gps: { type: "no", text: "Vendor-hosted, dealer-driven" }, mineoptic: { type: "yes", text: "Mine-owned database option" }, fms: { type: "yes", text: "Mine-owned, vendor-managed" } },
 ];
@@ -58,10 +58,10 @@ function CellIcon({ type }: { type: Cell["type"] }) {
 
 const reasons = [
   { title: "Built for mining, not adapted for it.", text: "Every module, field, and report comes from a problem we have watched play out in a pit or on a haul road." },
-  { title: "Designed around the four pillars.", text: "Connectivity, Accuracy, Granularity, Adoptability — each product is measured against all four." },
+  { title: "Designed around the four pillars.", text: "Connectivity, Accuracy, Granularity, Adoptability, each product is measured against all four." },
   { title: "Operationally honest about connectivity.", text: "We assume the network will fail and the phone will sync later; our data model handles it gracefully, with timestamps that hold up." },
   { title: "No cognitive burden on managers.", text: "The dashboard is the answer, not a stack of raw feeds to interpret." },
-  { title: "Your data, your database.", text: "With Mineoptic Canvas, sensitive production data can stay inside your own infrastructure or on cloud — your choice." },
+  { title: "Your data, your database.", text: "With Mineoptic Canvas, sensitive production data can stay inside your own infrastructure or on cloud, your choice." },
   { title: "Priced for the gap we fill.", text: "Between commodity trackers and enterprise FMS, with value that justifies the step up." },
 ];
 
@@ -69,21 +69,21 @@ const suite = [
   {
     name: "Mineoptic Lite",
     tag: "Start where the leakage is worst.",
-    text: "Replaces the most error-prone paper workflows — fuel logging and production counting — with a mobile app and visual analytics. Two modules: Mineoptic Fuel and Mineoptic Visual that enable digital logging even in low/no network zones.",
+    text: "Replaces the most error-prone paper workflows, fuel logging and production counting, with a mobile app and visual analytics. Two modules: Mineoptic Fuel and Mineoptic Visual that enable digital logging even in low/no network zones.",
     to: "/products/lite" as const,
     image: dashboardLite,
   },
   {
     name: "Mineoptic Plus",
     tag: "Plus the mines own network.",
-    text: "Everything in Lite, plus near-live fleet tracking built for the mine. Know whether each tipper is running empty, loaded, or parked — and determine productive hours, identify queue and road bottlenecks, even where the public network drops.",
+    text: "Everything in Lite, plus near-live fleet tracking built for the mine. Know whether each tipper is running empty, loaded, or parked, and determine productive hours, identify queue and road bottlenecks, even where the public network drops.",
     to: "/products/plus" as const,
     image: dashboardPlus,
   },
   {
     name: "Mineoptic Canvas",
     tag: "Your mines digital twin.",
-    text: "A self-service BI canvas purpose-built for mines. Connect Excel, SQL, your ERP, your data server — compose the digital twin of your operations on your own database. Analyze bottlenecks, simulate operations, get competitive.",
+    text: "A self-service BI canvas purpose-built for mines. Connect Excel, SQL, your ERP, your data server, compose the digital twin of your operations on your own database. Analyze bottlenecks, simulate operations, get competitive.",
     to: "/products/canvas" as const,
     image: dashboardCanvas,
   },
@@ -107,12 +107,12 @@ function HomePage() {
             Intelligence from the <span className="text-gradient">pit to the plant.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-xl text-primary-foreground/85 md:text-2xl">
-            See every bucket, every bottleneck, every shift — in real time.
+            See every bucket, every bottleneck, every shift, in real time.
           </p>
           <p className="mt-5 max-w-3xl text-base text-primary-foreground/75 md:text-lg">
             Minematics builds Mineoptic, a purpose-built mining intelligence platform that captures
             what clipboards miss and what generic GPS systems cannot. Granular, reliable, real-time
-            visibility into your operations — without the cost and complexity of enterprise FMS.
+            visibility into your operations, without the cost and complexity of enterprise FMS.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link to="/contact" className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground shadow-glow transition-transform hover:-translate-y-0.5">
@@ -130,7 +130,7 @@ function HomePage() {
         <SectionTitle
           eyebrow="The reality on the ground"
           title="Mines run blind on their most critical operations"
-          lead="Production, dispatch, fuel, loading — the data that drives a mines profitability is still largely captured on paper, in dusty cabins, by staff juggling pens that will not write and watches that do not agree. And where GPS trackers have been added, they deliver raw positional data that someone still has to interpret, reconcile, and trust."
+          lead="Production, dispatch, fuel, loading, the data that drives a mines profitability is still largely captured on paper, in dusty cabins, by staff juggling pens that will not write and watches that do not agree. And where GPS trackers have been added, they deliver raw positional data that someone still has to interpret, reconcile, and trust."
         />
         <p className="mb-8 max-w-3xl text-base text-muted-foreground">
           The result is the same whether the mine is modern or traditional: decisions get made at
@@ -152,7 +152,7 @@ function HomePage() {
         <SectionTitle
           eyebrow="Our framework"
           title="Four pillars of mining intelligence"
-          lead="Every mining operation — surface or underground, coal or metal, captive or commercial — needs these things from its data. Mineoptic is designed around them."
+          lead="Every mining operation, surface or underground, coal or metal, captive or commercial, needs these things from its data. Mineoptic is designed around them."
           center
         />
         <div className="grid items-center gap-10 lg:grid-cols-2">
@@ -185,7 +185,7 @@ function HomePage() {
         <SectionTitle
           eyebrow="Where Minematics fits"
           title="Between commodity trackers and enterprise FMS"
-          lead="Between the enterprise Fleet Management Systems that only the largest mines can justify, and the commodity trackers that capture too little to drive decisions, there is a gap. That gap is where most mines actually operate — and it is where Mineoptic is built to sit."
+          lead="Between the enterprise Fleet Management Systems that only the largest mines can justify, and the commodity trackers that capture too little to drive decisions, there is a gap. That gap is where most mines actually operate, and it is where Mineoptic is built to sit."
         />
         <div className="overflow-hidden rounded-xl border border-border bg-card shadow-elevated">
           <div className="overflow-x-auto">
@@ -219,7 +219,7 @@ function HomePage() {
         </div>
       </Section>
 
-      {/* THE SUITE — three products with individual explore links */}
+      {/* THE SUITE, three products with individual explore links */}
       <Section className="bg-primary text-primary-foreground">
         <SectionTitle
           eyebrow="The Mineoptic Suite"
