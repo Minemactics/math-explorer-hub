@@ -16,8 +16,8 @@ export const Route = createFileRoute("/about")({
 const mission = [
   { t: "Purpose-built.", d: "Every feature, field, and report is designed from a real mining workflow — not retrofitted from a generic platform." },
   { t: "Operationally honest.", d: "We assume networks fail, paper gets lost, and crews are busy. We design for that, not against it." },
-  { t: "Adopted on the ground.", d: "A system that isn't used is a system that doesn't exist. Adoption is a first-class design goal, not an afterthought." },
-  { t: "Aligned to the pillars.", d: "Visibility, Connectivity, Accuracy, Granularity, Adoptability — we measure every product against all five." },
+  { t: "Adopted on the ground.", d: "A system that is not used is a system that does not exist. Adoption is a first-class design goal, not an afterthought." },
+  { t: "Aligned to the pillars.", d: "Connectivity, Accuracy, Granularity, Adoptability — we measure every product against all four." },
   { t: "Respectful of your data.", d: "Sensitive production data stays where you decide it stays." },
 ];
 
@@ -90,7 +90,7 @@ function AboutPage() {
       <Section className="bg-teal-gradient text-accent-foreground">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Want to work with us?</h2>
-          <p className="mt-4 text-lg opacity-90">Whether you're a mine, a partner, or a future Minematics engineer — we'd like to hear from you.</p>
+          <p className="mt-4 text-lg opacity-90">Whether you are a mine, a partner, or a future Minematics engineer — we would like to hear from you.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link to="/careers" className="rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-elevated hover:-translate-y-0.5 transition-transform">See careers</Link>
             <Link to="/contact" className="rounded-md border border-white/40 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur hover:bg-white/20">Contact us</Link>

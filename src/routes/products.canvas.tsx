@@ -6,9 +6,9 @@ import { Section, Eyebrow } from "@/components/Section";
 export const Route = createFileRoute("/products/canvas")({
   head: () => ({
     meta: [
-      { title: "Mineoptic Canvas — Your mine's digital twin, on your database | Minematics" },
+      { title: "Mineoptic Canvas — Your mines digital twin, on your database | Minematics" },
       { name: "description", content: "A self-service BI canvas built for mines. Compose your operations digital twin from Excel, SQL, ERP and data servers — and keep the data on your own infrastructure." },
-      { property: "og:title", content: "Mineoptic Canvas — Your mine's digital twin." },
+      { property: "og:title", content: "Mineoptic Canvas — Your mines digital twin." },
       { property: "og:description", content: "Self-service BI built specifically for mines, with data sovereignty by design." },
       { property: "og:image", content: dashboardCanvas },
       { name: "twitter:image", content: dashboardCanvas },
@@ -29,9 +29,9 @@ const canvasFeatures = [
 
 const canvasProblems = [
   "Data scattered across Excel workbooks, dispatch software, fuel logs, and the weighbridge — with no common view.",
-  "A generic BI tool that doesn't speak mining, so every dashboard is built from scratch.",
-  "Production data leaving the site for a vendor cloud, which compliance and security teams won't sign off on.",
-  "End-of-shift decisions because there's no live aggregation layer that reconciles across sources.",
+  "A generic BI tool that does not speak mining, so every dashboard is built from scratch.",
+  "Production data leaving the site for a vendor cloud, which compliance and security teams will not sign off on.",
+  "End-of-shift decisions because there is no live aggregation layer that reconciles across sources.",
   "IT backlogs that mean every new report waits weeks to be built.",
   "Searching for the right dashboard for the right metric, often losing the perspective in the process.",
 ];
@@ -47,7 +47,7 @@ const canvasBuild = [
 
 const canvasFor = [
   "Operations and planning teams that want to build their own views without waiting on IT.",
-  "Mines that need a real digital twin but aren't going down the enterprise FMS path.",
+  "Mines that need a real digital twin but are not going down the enterprise FMS path.",
   "Companies that want to integrate other IT systems for analysis such as financial impact, mine planning, and operations simulation.",
   "Groups with strict data-residency requirements where production data must stay on-site.",
   "Teams already using Mineoptic Lite or Plus who want one canvas to see everything together.",
@@ -69,12 +69,12 @@ function CanvasPage() {
         <div className="container-page py-20 md:py-28">
           <Eyebrow>Mineoptic Canvas</Eyebrow>
           <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
-            Your mine's digital twin — <span className="text-gradient">on your database.</span>
+            Your mines digital twin — <span className="text-gradient">on your database.</span>
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-primary-foreground/85 md:text-xl">
             A self-service BI tool built specifically for mines. Compose the digital twin of the
             operation — pits, routes, faces, fleets, plants — and wire it to whatever data you
-            already have. Stored on your mine's own database, so the data never has to leave your control.
+            already have. Stored on your mines own database, so the data never has to leave your control.
           </p>
           <div className="mt-8 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-teal-gradient text-white"><Database className="h-6 w-6" /></div>
         </div>
@@ -122,8 +122,8 @@ function CanvasPage() {
         <div className="mt-10 rounded-2xl border border-accent/30 bg-accent/5 p-7">
           <h3 className="text-xl font-semibold text-primary">Data sovereignty, made explicit</h3>
           <p className="mt-3 text-sm leading-relaxed text-foreground/85">
-            Sensitive production and commercial data should not be a vendor's problem. Mineoptic Canvas
-            is built so the data layer sits on your mine's infrastructure. You control the database; we
+            Sensitive production and commercial data should not be a vendors problem. Mineoptic Canvas
+            is built so the data layer sits on your mines infrastructure. You control the database; we
             provide the engine and the interface. When an audit or a compliance review asks where the
             data lives, the answer is simple: it never left.
           </p>

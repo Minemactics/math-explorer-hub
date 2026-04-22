@@ -22,10 +22,10 @@ export const Route = createFileRoute("/")({
 });
 
 const pillars = [
-  { icon: Wifi, name: "Connectivity", text: "Mines don't choose where the network reaches. Deep pits, underground drives, remote dumps — the signal drops where the action happens. Offline capture, deferred sync with timestamps that don't lie, and a network design that doesn't wait on a telecom operator." },
-  { icon: Target, name: "Accuracy", text: "Decisions are only as relevant as the data is accurate. We don't rely on accuracy under standard circumstances — we build alternate mechanisms to obtain the data essential for decisions like distances between assets and road conditions." },
-  { icon: Layers, name: "Granularity", text: "The difference between 'trip logged' and 'five buckets, 3m 40s per bucket, 2m 10s queue at crusher' is the difference between a report and a decision. Mineoptic captures the cycle so managers can answer the question that matters." },
-  { icon: Users, name: "Adoptability", text: "A system only works if the people on the ground actually use it. Mineoptic is built for operators, supervisors, and managers who don't have time for training manuals — simple workflows, familiar interfaces, and dashboards that answer questions instead of raising new ones." },
+  { icon: Wifi, name: "Connectivity", text: "Mines do not choose where the network reaches. Deep pits, underground drives, remote dumps — the signal drops where the action happens. Offline capture, deferred sync with timestamps that do not lie, and a network design that does not wait on a telecom operator." },
+  { icon: Target, name: "Accuracy", text: "Decisions are only as relevant as the data is accurate. We do not rely on accuracy under standard circumstances — we build alternate mechanisms to obtain the data essential for decisions like distances between assets and road conditions." },
+  { icon: Layers, name: "Granularity", text: "The difference between trip logged and five buckets, 3m 40s per bucket, 2m 10s queue at crusher is the difference between a report and a decision. Mineoptic captures the cycle so managers can answer the question that matters." },
+  { icon: Users, name: "Adoptability", text: "A system only works if the people on the ground actually use it. Mineoptic is built for operators, supervisors, and managers who do not have time for training manuals — simple workflows, familiar interfaces, and dashboards that answer questions instead of raising new ones." },
 ];
 
 const wrong = [
@@ -35,7 +35,7 @@ const wrong = [
   "Manual summarisation introduces its own errors, and the staff doing it are doing mundane, unrewarding work.",
   "Reconciliation across sections (pit, weighbridge, dispatch, fuel) rarely lines up, so the whole dataset becomes non-reliable.",
   "What gets captured is surface-level — total trips, total tonnage — with no view into queueing, bucket counts, cycle breakup, or bottlenecks.",
-  "GPS trackers show where a truck is, not why it's waiting, how many buckets it took to fill, or which excavator is starving its fleet.",
+  "GPS trackers show where a truck is, not why it is waiting, how many buckets it took to fill, or which excavator is starving its fleet.",
   "Generic GPS devices rely on third-party GSM towers and store data offline during dead zones, so stationary assets like excavators and weighbridges report late — destroying time-sync across the mine.",
   "Dealer-driven tracking solutions give managers raw feeds to interpret themselves. The cognitive burden pushes them back to their old paper registers.",
 ];
@@ -58,7 +58,7 @@ function CellIcon({ type }: { type: Cell["type"] }) {
 
 const reasons = [
   { title: "Built for mining, not adapted for it.", text: "Every module, field, and report comes from a problem we have watched play out in a pit or on a haul road." },
-  { title: "Designed around the four pillars.", text: "Visibility, Connectivity, Accuracy, Granularity — each product is measured against all four." },
+  { title: "Designed around the four pillars.", text: "Connectivity, Accuracy, Granularity, Adoptability — each product is measured against all four." },
   { title: "Operationally honest about connectivity.", text: "We assume the network will fail and the phone will sync later; our data model handles it gracefully, with timestamps that hold up." },
   { title: "No cognitive burden on managers.", text: "The dashboard is the answer, not a stack of raw feeds to interpret." },
   { title: "Your data, your database.", text: "With Mineoptic Canvas, sensitive production data can stay inside your own infrastructure or on cloud — your choice." },
@@ -75,14 +75,14 @@ const suite = [
   },
   {
     name: "Mineoptic Plus",
-    tag: "Plus the mine's own network.",
+    tag: "Plus the mines own network.",
     text: "Everything in Lite, plus near-live fleet tracking built for the mine. Know whether each tipper is running empty, loaded, or parked — and determine productive hours, identify queue and road bottlenecks, even where the public network drops.",
     to: "/products/plus" as const,
     image: dashboardPlus,
   },
   {
     name: "Mineoptic Canvas",
-    tag: "Your mine's digital twin.",
+    tag: "Your mines digital twin.",
     text: "A self-service BI canvas purpose-built for mines. Connect Excel, SQL, your ERP, your data server — compose the digital twin of your operations on your own database. Analyze bottlenecks, simulate operations, get competitive.",
     to: "/products/canvas" as const,
     image: dashboardCanvas,
@@ -130,13 +130,13 @@ function HomePage() {
         <SectionTitle
           eyebrow="The reality on the ground"
           title="Mines run blind on their most critical operations"
-          lead="Production, dispatch, fuel, loading — the data that drives a mine's profitability is still largely captured on paper, in dusty cabins, by staff juggling pens that won't write and watches that don't agree. And where GPS trackers have been added, they deliver raw positional data that someone still has to interpret, reconcile, and trust."
+          lead="Production, dispatch, fuel, loading — the data that drives a mines profitability is still largely captured on paper, in dusty cabins, by staff juggling pens that will not write and watches that do not agree. And where GPS trackers have been added, they deliver raw positional data that someone still has to interpret, reconcile, and trust."
         />
         <p className="mb-8 max-w-3xl text-base text-muted-foreground">
           The result is the same whether the mine is modern or traditional: decisions get made at
           the end of the shift, based on data nobody is fully sure of.
         </p>
-        <h3 className="mb-6 text-xl font-semibold md:text-2xl">What's actually going wrong on the ground</h3>
+        <h3 className="mb-6 text-xl font-semibold md:text-2xl">What is actually going wrong on the ground</h3>
         <ul className="grid gap-4 md:grid-cols-2">
           {wrong.map((w, i) => (
             <li key={i} className="flex gap-3 rounded-lg border border-border bg-card p-5 shadow-card">
@@ -274,7 +274,7 @@ function HomePage() {
       <Section className="bg-teal-gradient text-accent-foreground">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold md:text-5xl">Tell us about your mine.</h2>
-          <p className="mt-4 text-lg text-accent-foreground/90">We'll tell you where Mineoptic fits.</p>
+          <p className="mt-4 text-lg text-accent-foreground/90">We will tell you where Mineoptic fits.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link to="/contact" className="rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-elevated transition-transform hover:-translate-y-0.5">Request a demo</Link>
           </div>

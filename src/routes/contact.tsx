@@ -6,7 +6,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Us — Minematics" },
-      { name: "description", content: "Tell us about your mine. We'll tell you where Mineoptic fits. Sales, support, partnerships and press." },
+      { name: "description", content: "Tell us about your mine. We will tell you where Mineoptic fits. Sales, support, partnerships and press." },
       { property: "og:title", content: "Contact Minematics" },
       { property: "og:description", content: "Talk to sales, customer support, partnerships, or general enquiries." },
     ],
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/contact")({
 const blocks = [
   {
     icon: Mail, title: "Talk to sales",
-    body: "If you're evaluating Mineoptic for a specific mine or group of mines, our team can walk you through the suite, discuss where Lite, Plus, or Canvas fits best, and arrange a site demo.",
+    body: "If you are evaluating Mineoptic for a specific mine or group of mines, our team can walk you through the suite, discuss where Lite, Plus, or Canvas fits best, and arrange a site demo.",
     items: [
       { l: "Email", v: "sales@minematics.com", href: "mailto:sales@minematics.com" },
       { l: "Phone", v: "+91 95021 36760", href: "tel:+919502136760" },
@@ -33,7 +33,7 @@ const blocks = [
   },
   {
     icon: Handshake, title: "Partnerships",
-    body: "System integrators, OEMs, and consultancies working with mines — we'd like to hear from you.",
+    body: "System integrators, OEMs, and consultancies working with mines — we would like to hear from you.",
     items: [
       { l: "Email", v: "partners@minematics.com", href: "mailto:partners@minematics.com" },
     ],
@@ -55,7 +55,7 @@ function ContactPage() {
           <Eyebrow>Contact Us</Eyebrow>
           <h1 className="mt-5 max-w-4xl text-4xl font-bold md:text-6xl">
             Tell us about your mine. <br />
-            <span className="text-gradient">We'll tell you where Mineoptic fits.</span>
+            <span className="text-gradient">We will tell you where Mineoptic fits.</span>
           </h1>
         </div>
       </section>

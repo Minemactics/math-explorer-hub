@@ -18,10 +18,10 @@ export const Route = createFileRoute("/products/lite")({
 });
 
 const liteProblems = [
-  "Fuel logging that drifts shift to shift because pens, paper, and dusty cabins don't play well together.",
+  "Fuel logging that drifts shift to shift because pens, paper, and dusty cabins do not play well together.",
   "Truck counts that never reconcile because one card went missing between the gate and the dispatcher.",
   "No visibility into bucket counts, load time, or how long a truck actually waits at the excavator or weighbridge.",
-  "Managers who can't size the tipper fleet per excavator because the data has never been granular enough to decide.",
+  "Managers who cannot size the tipper fleet per excavator because the data has never been granular enough to decide.",
   "Staff motivation falling off a cliff because the logging work is mundane and thankless.",
 ];
 
@@ -35,7 +35,7 @@ const fuelHow = [
 
 const fuelWhy = [
   "Eliminates pen-and-paper error. No illegible handwriting, no wrong dates, no soiled cards, no card lost between the bowser and the office.",
-  "Solves the connectivity problem. The bowser is often in the worst connectivity zone of the mine. Offline-first capture means the crew doesn't wait for signal.",
+  "Solves the connectivity problem. The bowser is often in the worst connectivity zone of the mine. Offline-first capture means the crew does not wait for signal.",
   "Keeps the time honest. Event time and upload time are both recorded, so reconciliation is straightforward.",
   "Removes the mundane. Operators tap and move on; no one has to sit at the end of the shift transcribing slips.",
 ];
@@ -49,10 +49,10 @@ const visualWhat = [
 ];
 
 const visualWhy = [
-  "Granularity the old way couldn't deliver. Nobody is going to hand-count buckets for a full shift. A camera with the right model will.",
+  "Granularity the old way could not deliver. Nobody is going to hand-count buckets for a full shift. A camera with the right model will.",
   "Bottleneck data, not just movement data. Queue time at the weighbridge is the kind of number that turns into a decision within a week.",
   "Tipper fleet sizing, finally. With bucket count and load time per excavator, you can compute the right tipper count per excavator instead of guessing.",
-  "Hands-off operation. The crew doesn't log anything. The data comes from the camera stream.",
+  "Hands-off operation. The crew does not log anything. The data comes from the camera stream.",
 ];
 
 const liteFor = [
@@ -82,7 +82,7 @@ function LitePage() {
           <p className="mt-6 max-w-3xl text-lg text-primary-foreground/85 md:text-xl">
             The fastest way to replace two of the most error-prone paper workflows in any mine —
             fuel logging and production counting. Two focused modules work together to give you
-            clean, reconciled, granular data without adding a step to your crew's day.
+            clean, reconciled, granular data without adding a step to your crews day.
           </p>
         </div>
       </section>
@@ -115,7 +115,7 @@ function LitePage() {
           <p className="mt-4 text-base leading-relaxed text-foreground/85">
             Mineoptic Fuel puts fuel logging on a phone. At the bowser, the operator opens the
             app, photographs the truck number plate, the truck odometer, and the bowser meter —
-            and that's it. The system reads, timestamps, geolocates and uploads the record automatically.
+            and that is it. The system reads, timestamps, geolocates and uploads the record automatically.
           </p>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             <div>
