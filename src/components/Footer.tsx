@@ -15,7 +15,7 @@ export function Footer() {
           <img src={logo} alt="Minematics" className="h-10 w-auto rounded bg-white/95 p-1.5" />
           <p className="mt-4 max-w-md text-sm text-primary-foreground/75">
             Minematics builds Mineoptic — a purpose-built mining intelligence
-            platform. Visibility • Connectivity • Accuracy • Granularity • Adoptability.
+            platform. Connectivity • Accuracy • Granularity • Adoptability.
           </p>
         </div>
         <div>

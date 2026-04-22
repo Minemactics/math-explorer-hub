@@ -58,7 +58,7 @@ function CellIcon({ type }: { type: Cell["type"] }) {
 
 const reasons = [
   { title: "Built for mining, not adapted for it.", text: "Every module, field, and report comes from a problem we have watched play out in a pit or on a haul road." },
-  { title: "Designed around the four pillars.", text: "Visibility, Connectivity, Accuracy, Granularity — each product is measured against all four." },
+  { title: "Designed around the four pillars.", text: "Connectivity, Accuracy, Granularity, Adoptability — each product is measured against all four." },
   { title: "Operationally honest about connectivity.", text: "We assume the network will fail and the phone will sync later; our data model handles it gracefully, with timestamps that hold up." },
   { title: "No cognitive burden on managers.", text: "The dashboard is the answer, not a stack of raw feeds to interpret." },
   { title: "Your data, your database.", text: "With Mineoptic Canvas, sensitive production data can stay inside your own infrastructure or on cloud — your choice." },

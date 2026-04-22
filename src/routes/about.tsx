@@ -17,7 +17,7 @@ const mission = [
   { t: "Purpose-built.", d: "Every feature, field, and report is designed from a real mining workflow — not retrofitted from a generic platform." },
   { t: "Operationally honest.", d: "We assume networks fail, paper gets lost, and crews are busy. We design for that, not against it." },
   { t: "Adopted on the ground.", d: "A system that is not used is a system that does not exist. Adoption is a first-class design goal, not an afterthought." },
-  { t: "Aligned to the pillars.", d: "Visibility, Connectivity, Accuracy, Granularity, Adoptability — we measure every product against all five." },
+  { t: "Aligned to the pillars.", d: "Connectivity, Accuracy, Granularity, Adoptability — we measure every product against all four." },
   { t: "Respectful of your data.", d: "Sensitive production data stays where you decide it stays." },
 ];
 
