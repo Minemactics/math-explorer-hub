@@ -223,6 +223,24 @@ function ResourcesPage() {
           ))}
         </div>
       </Section>
+
+      {/* Use Case Modal */}
+      <Dialog open={!!activeUseCase} onOpenChange={(open) => !open && setOpenSlug(null)}>
+        <DialogContent className="max-h-[92vh] w-[96vw] max-w-6xl overflow-y-auto p-0 sm:rounded-2xl">
+          {activeUseCase && (
+            <>
+              <DialogTitle className="sr-only">{activeUseCase.title}</DialogTitle>
+              <DialogDescription className="sr-only">{activeUseCase.shortDescription}</DialogDescription>
+              <UseCaseDetail
+                useCase={activeUseCase}
+                variant="modal"
+                onClose={() => setOpenSlug(null)}
+                onSelectNext={(slug) => setOpenSlug(slug)}
+              />
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
