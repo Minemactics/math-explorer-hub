@@ -19,6 +19,7 @@ import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsPlusRouteImport } from './routes/products.plus'
 import { Route as ProductsLiteRouteImport } from './routes/products.lite'
 import { Route as ProductsCanvasRouteImport } from './routes/products.canvas'
+import { Route as ResourcesUseCasesSlugRouteImport } from './routes/resources.use-cases.$slug'
 
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
@@ -70,6 +71,11 @@ const ProductsCanvasRoute = ProductsCanvasRouteImport.update({
   path: '/canvas',
   getParentRoute: () => ProductsRoute,
 } as any)
+const ResourcesUseCasesSlugRoute = ResourcesUseCasesSlugRouteImport.update({
+  id: '/use-cases/$slug',
+  path: '/use-cases/$slug',
+  getParentRoute: () => ResourcesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -77,22 +83,24 @@ export interface FileRoutesByFullPath {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/products': typeof ProductsRouteWithChildren
-  '/resources': typeof ResourcesRoute
+  '/resources': typeof ResourcesRouteWithChildren
   '/products/canvas': typeof ProductsCanvasRoute
   '/products/lite': typeof ProductsLiteRoute
   '/products/plus': typeof ProductsPlusRoute
   '/products/': typeof ProductsIndexRoute
+  '/resources/use-cases/$slug': typeof ResourcesUseCasesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
-  '/resources': typeof ResourcesRoute
+  '/resources': typeof ResourcesRouteWithChildren
   '/products/canvas': typeof ProductsCanvasRoute
   '/products/lite': typeof ProductsLiteRoute
   '/products/plus': typeof ProductsPlusRoute
   '/products': typeof ProductsIndexRoute
+  '/resources/use-cases/$slug': typeof ResourcesUseCasesSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -101,11 +109,12 @@ export interface FileRoutesById {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/products': typeof ProductsRouteWithChildren
-  '/resources': typeof ResourcesRoute
+  '/resources': typeof ResourcesRouteWithChildren
   '/products/canvas': typeof ProductsCanvasRoute
   '/products/lite': typeof ProductsLiteRoute
   '/products/plus': typeof ProductsPlusRoute
   '/products/': typeof ProductsIndexRoute
+  '/resources/use-cases/$slug': typeof ResourcesUseCasesSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -120,6 +129,7 @@ export interface FileRouteTypes {
     | '/products/lite'
     | '/products/plus'
     | '/products/'
+    | '/resources/use-cases/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -131,6 +141,7 @@ export interface FileRouteTypes {
     | '/products/lite'
     | '/products/plus'
     | '/products'
+    | '/resources/use-cases/$slug'
   id:
     | '__root__'
     | '/'
@@ -143,6 +154,7 @@ export interface FileRouteTypes {
     | '/products/lite'
     | '/products/plus'
     | '/products/'
+    | '/resources/use-cases/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -151,7 +163,7 @@ export interface RootRouteChildren {
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   ProductsRoute: typeof ProductsRouteWithChildren
-  ResourcesRoute: typeof ResourcesRoute
+  ResourcesRoute: typeof ResourcesRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -226,6 +238,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsCanvasRouteImport
       parentRoute: typeof ProductsRoute
     }
+    '/resources/use-cases/$slug': {
+      id: '/resources/use-cases/$slug'
+      path: '/use-cases/$slug'
+      fullPath: '/resources/use-cases/$slug'
+      preLoaderRoute: typeof ResourcesUseCasesSlugRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
   }
 }
 
@@ -247,13 +266,25 @@ const ProductsRouteWithChildren = ProductsRoute._addFileChildren(
   ProductsRouteChildren,
 )
 
+interface ResourcesRouteChildren {
+  ResourcesUseCasesSlugRoute: typeof ResourcesUseCasesSlugRoute
+}
+
+const ResourcesRouteChildren: ResourcesRouteChildren = {
+  ResourcesUseCasesSlugRoute: ResourcesUseCasesSlugRoute,
+}
+
+const ResourcesRouteWithChildren = ResourcesRoute._addFileChildren(
+  ResourcesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   ProductsRoute: ProductsRouteWithChildren,
-  ResourcesRoute: ResourcesRoute,
+  ResourcesRoute: ResourcesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
