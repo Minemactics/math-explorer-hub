@@ -63,6 +63,7 @@ const ebooks = [
 
 function ResourcesPage() {
   const [activeFilter, setActiveFilter] = useState<UseCaseCategory | "All">("All");
+  const [openSlug, setOpenSlug] = useState<string | null>(null);
 
   const filteredUseCases = useMemo(
     () =>
@@ -73,6 +74,8 @@ function ResourcesPage() {
           ),
     [activeFilter],
   );
+
+  const activeUseCase = openSlug ? useCases.find((u) => u.slug === openSlug) ?? null : null;
 
   return (
     <>
