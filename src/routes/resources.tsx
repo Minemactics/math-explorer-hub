@@ -5,9 +5,8 @@ import {
   BookOpen,
   FileText,
   ShieldAlert,
-  MapPin,
-  BarChart3,
-  Eye,
+  Truck,
+  Gauge,
   Workflow,
 } from "lucide-react";
 import { Section, SectionTitle, Eyebrow } from "@/components/Section";
@@ -26,10 +25,9 @@ export const Route = createFileRoute("/resources")({
 });
 
 const categoryIcon: Record<UseCaseCategory, typeof ShieldAlert> = {
+  Efficiency: Gauge,
   Safety: ShieldAlert,
-  Tracking: MapPin,
-  Analytics: BarChart3,
-  "Computer Vision": Eye,
+  Logistics: Truck,
   "Operations Intelligence": Workflow,
 };
 
