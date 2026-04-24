@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, CheckCircle2, ChevronRight, Cpu, Eye, Gauge, Layers, Workflow } from "lucide-react";
+import { AlertTriangle, ArrowLeft, ArrowRight, BarChart3, CheckCircle2, ChevronRight, Cpu, Eye, Gauge, Layers, Map as MapIcon, Workflow } from "lucide-react";
 import { Section, Eyebrow } from "@/components/Section";
 import { getUseCase, useCases } from "@/data/useCases";
 
@@ -176,6 +176,38 @@ function UseCaseDetailPage() {
               </div>
             ))}
           </div>
+        </div>
+      </Section>
+
+      {/* Dashboard preview */}
+      <Section>
+        <div className="mb-10 max-w-3xl">
+          <Eyebrow>Dashboard preview</Eyebrow>
+          <h2 className="mt-4 text-3xl font-bold">What you will see in the dashboard</h2>
+          <p className="mt-3 text-muted-foreground">{useCase.dashboard.intro}</p>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {useCase.dashboard.items.map((item) => {
+            const Icon = item.type === "Chart" ? BarChart3 : item.type === "Map" ? MapIcon : item.type === "Alert" ? AlertTriangle : Gauge;
+            const tone =
+              item.type === "Alert"
+                ? "border-destructive/30 bg-destructive/5 text-destructive"
+                : item.type === "Map"
+                  ? "border-accent/30 bg-accent/5 text-accent"
+                  : item.type === "KPI"
+                    ? "border-primary/20 bg-primary/5 text-primary"
+                    : "border-border bg-muted text-foreground/70";
+            return (
+              <div key={item.title} className="flex flex-col rounded-xl border border-border bg-card p-5 shadow-card">
+                <div className={`inline-flex w-fit items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold ${tone}`}>
+                  <Icon className="h-3.5 w-3.5" />
+                  {item.type}
+                </div>
+                <h3 className="mt-3 text-base font-semibold leading-snug">{item.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+              </div>
+            );
+          })}
         </div>
       </Section>
 
