@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { AlertTriangle, ArrowLeft, ArrowRight, BarChart3, CheckCircle2, ChevronRight, Cpu, Eye, Gauge, Layers, Map as MapIcon, Workflow } from "lucide-react";
-import { Section, Eyebrow } from "@/components/Section";
-import { getUseCase, useCases } from "@/data/useCases";
+import { ArrowLeft, ChevronRight } from "lucide-react";
+import { UseCaseDetail } from "@/components/UseCaseDetail";
+import { getUseCase } from "@/data/useCases";
 
 export const Route = createFileRoute("/resources/use-cases/$slug")({
   loader: ({ params }) => {
