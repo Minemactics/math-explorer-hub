@@ -32,7 +32,7 @@ function AboutPage() {
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-primary-foreground/85 md:text-xl">
             Minematics is a mining intelligence company. We build Mineoptic, a purpose-built platform that
-            gives mines the visibility, connectivity, accuracy, granularity, and adoptability they need to
+            gives mines the connectivity, accuracy, granularity, and adoptability they need to
             run better shifts, every shift.
           </p>
         </div>
