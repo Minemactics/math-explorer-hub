@@ -123,11 +123,11 @@ function ResourcesPage() {
           {filteredUseCases.map((u) => {
             const Icon = categoryIcon[u.category];
             return (
-              <Link
+              <button
                 key={u.slug}
-                to="/resources/use-cases/$slug"
-                params={{ slug: u.slug }}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-elevated"
+                type="button"
+                onClick={() => setOpenSlug(u.slug)}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card text-left shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-elevated"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-muted">
                   <img
@@ -154,7 +154,7 @@ function ResourcesPage() {
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
-              </Link>
+              </button>
             );
           })}
         </div>
