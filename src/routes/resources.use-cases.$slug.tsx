@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, CheckCircle2, ChevronRight, Cpu, Eye, Gauge, Layers, Workflow } from "lucide-react";
+import { AlertTriangle, ArrowLeft, ArrowRight, BarChart3, CheckCircle2, ChevronRight, Cpu, Eye, Gauge, Layers, Map as MapIcon, Workflow } from "lucide-react";
 import { Section, Eyebrow } from "@/components/Section";
 import { getUseCase, useCases } from "@/data/useCases";
 
