@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import {
   ArrowRight,
@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import { Section, SectionTitle, Eyebrow } from "@/components/Section";
 import { useCases, useCaseCategories, type UseCaseCategory } from "@/data/useCases";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { UseCaseDetail } from "@/components/UseCaseDetail";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
