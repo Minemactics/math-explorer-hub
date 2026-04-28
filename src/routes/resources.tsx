@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import {
   ArrowRight,
-  BookOpen,
   FileText,
   ShieldAlert,
   Truck,
@@ -51,14 +50,6 @@ const blogs = [
   { t: "Why mines outgrow their GPS trackers", d: "Standard GPS is built for fleets on public roads. Mines are different, dead zones, stationary assets, asset relationships that matter more than coordinates. We break down where trackers run out of road." },
   { t: "Designing for the dead zone", d: "The deepest bench, the underground drive, the back-of-pit bowser, every mine has a dead zone where it matters most. We discuss what offline-first capture really requires to stay trustworthy." },
   { t: "Adoption is the hardest pillar", d: "Connectivity, Accuracy, Granularity are all engineering problems. Adoptability is a design problem, and it is the one that decides whether the system gets used. Here is how we approach it." },
-];
-
-const ebooks = [
-  { t: "The Four Pillars of Mining Intelligence", sub: "The flagship Minematics guide.", d: "A detailed walk-through of Connectivity, Accuracy, Granularity, and Adoptability, why these four, how they interact, and how to score your current setup against each one. Includes a pillar-by-pillar assessment framework and representative operational metrics." },
-  { t: "From Paper to Digital, A Practical Playbook for Mines", d: "A practical guide to retiring paper-based data capture in a mine, which workflows to start with, how to handle the offline zones, how to win the crew over, and how to measure the return within one quarter." },
-  { t: "Sizing the Tipper Fleet, A Data-Driven Method", d: "The planning question that rule-of-thumb has never answered well. This e-book walks through a data-driven method using bucket counts, load times, and queue times, and shows how granular visual analytics makes it practical." },
-  { t: "Choosing Between GPS, Mineoptic, and Enterprise FMS", d: "A candid buyers guide for mines deciding how far up the stack to go. What each category is actually good at, where each one stops, and how to match the choice to the operation." },
-  { t: "Data Sovereignty in Mining Operations", d: "Why production and commercial data should stay inside the mines infrastructure, what data sovereignty by design actually means, and how Mineoptic Canvas is architected to deliver it." },
 ];
 
 function ResourcesPage() {
