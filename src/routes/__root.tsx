@@ -36,6 +36,12 @@ export const Route = createRootRoute({
       { name: "author", content: "Minematics" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Minematics: Mining Intelligence, Purpose-Built" },
+      { name: "twitter:title", content: "Minematics: Mining Intelligence, Purpose-Built" },
+      { property: "og:description", content: "Minematics builds Mineoptic: granular, real-time mining intelligence from the pit to the plant." },
+      { name: "twitter:description", content: "Minematics builds Mineoptic: granular, real-time mining intelligence from the pit to the plant." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b84a92fc-9c49-4cf2-9551-b4f375fcd050/id-preview-126aae0b--ac03b0bb-a435-4389-b4fc-c956e926251c.lovable.app-1777364256265.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b84a92fc-9c49-4cf2-9551-b4f375fcd050/id-preview-126aae0b--ac03b0bb-a435-4389-b4fc-c956e926251c.lovable.app-1777364256265.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
