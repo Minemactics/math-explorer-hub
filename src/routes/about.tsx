@@ -38,6 +38,7 @@ const mission = [
 ];
 
 function AboutPage() {
+  const autoplay = useRef(Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true }));
   return (
     <>
       <section className="bg-hero-gradient text-primary-foreground">
