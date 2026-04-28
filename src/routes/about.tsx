@@ -104,6 +104,26 @@ function AboutPage() {
         </div>
       </Section>
 
+      <Section>
+        <SectionTitle eyebrow="On the ground" title="Training & industry engagement" />
+        <Carousel
+          opts={{ loop: true, align: "start" }}
+          plugins={[autoplay.current]}
+          className="mx-auto max-w-5xl"
+        >
+          <CarouselContent>
+            {trainingImages.map((img, i) => (
+              <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/2">
+                <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-card">
+                  <img src={img.src} alt={img.caption} className="aspect-video w-full object-cover" loading="lazy" />
+                  <p className="px-5 py-4 text-sm text-muted-foreground">{img.caption}</p>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </Section>
+
       <Section className="bg-teal-gradient text-accent-foreground">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Want to work with us?</h2>
