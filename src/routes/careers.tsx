@@ -80,12 +80,12 @@ function CareersPage() {
           <h2 className="text-3xl font-bold">How to apply</h2>
           <p className="mt-4 text-base text-foreground/85">
             Send your CV and a short note, why mining, why Minematics, to{" "}
-            <a href="mailto:careers@minematics.com" className="font-semibold text-accent hover:underline">careers@minematics.com</a>.
+            <a href="mailto:careers@minematics.in" className="font-semibold text-accent hover:underline">careers@minematics.in</a>.
             If there is a specific open role you are targeting, mention it in the subject line. If there is not,
             tell us what you would want to work on; speculative applications are welcome.
           </p>
-          <a href="mailto:careers@minematics.com" className="mt-8 inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground shadow-glow hover:-translate-y-0.5 transition-transform">
-            Email careers@minematics.com
+          <a href="mailto:careers@minematics.in" className="mt-8 inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground shadow-glow hover:-translate-y-0.5 transition-transform">
+            Email careers@minematics.in
           </a>
         </div>
       </Section>

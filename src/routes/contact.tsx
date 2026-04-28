@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, Phone, LifeBuoy, Handshake, MapPin } from "lucide-react";
+import { Mail, Phone, LifeBuoy, Handshake, MapPin, Linkedin, Twitter } from "lucide-react";
 import { Section, Eyebrow } from "@/components/Section";
 
 export const Route = createFileRoute("/contact")({
@@ -19,7 +19,7 @@ const blocks = [
     icon: Mail, title: "Talk to sales",
     body: "If you are evaluating Mineoptic for a specific mine or group of mines, our team can walk you through the suite, discuss where Lite, Plus, or Canvas fits best, and arrange a site demo.",
     items: [
-      { l: "Email", v: "sales@minematics.com", href: "mailto:sales@minematics.com" },
+      { l: "Email", v: "info@minematics.in", href: "mailto:info@minematics.in" },
       { l: "Phone", v: "+91 95021 36760", href: "tel:+919502136760" },
     ],
   },
@@ -27,22 +27,22 @@ const blocks = [
     icon: LifeBuoy, title: "Customer support",
     body: "Existing customers, our support team is available around the clock for deployed Mineoptic sites.",
     items: [
-      { l: "Email", v: "support@minematics.com", href: "mailto:support@minematics.com" },
-      { l: "Support portal", v: "support.minematics.com", href: "https://support.minematics.com" },
+      { l: "Email", v: "support@minematics.in", href: "mailto:support@minematics.in" },
     ],
   },
   {
     icon: Handshake, title: "Partnerships",
     body: "System integrators, OEMs, and consultancies working with mines, we would like to hear from you.",
     items: [
-      { l: "Email", v: "partners@minematics.com", href: "mailto:partners@minematics.com" },
+      { l: "Email", v: "partners@minematics.in", href: "mailto:partners@minematics.in" },
     ],
   },
   {
-    icon: Phone, title: "General enquiries & press",
-    body: "Anything else, story ideas, media, partnerships, or just hello.",
+    icon: Linkedin, title: "Social media presence",
+    body: "Follow Minematics for product updates, field stories from mines, and what we are learning along the way.",
     items: [
-      { l: "Email", v: "hello@minematics.com", href: "mailto:hello@minematics.com" },
+      { l: "LinkedIn", v: "linkedin.com/company/minematics", href: "https://www.linkedin.com/company/minematics/" },
+      { l: "X", v: "@Mine_Matics", href: "https://x.com/Mine_Matics" },
     ],
   },
 ];
@@ -89,9 +89,10 @@ function ContactPage() {
             <h2 className="text-xl font-bold">Office</h2>
           </div>
           <p className="mt-3 text-base font-semibold text-primary">Minematics Technologies</p>
-          <p className="text-sm text-muted-foreground">Hyderabad, Telangana, India</p>
-          <p className="mt-3 text-xs italic text-muted-foreground">
-            (Full address, directions, and regional offices listed on the live website.)
+          <p className="text-sm text-muted-foreground">
+            First Floor, Chippa Babaih Nilayam, H.No.13-4-87,<br />
+            Vikas Nagar, Dilsukhnagar, Hyderabad,<br />
+            Telangana – 500060, India
           </p>
         </div>
       </Section>
