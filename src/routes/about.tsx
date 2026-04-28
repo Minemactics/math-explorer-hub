@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, SectionTitle, Eyebrow } from "@/components/Section";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 import training1 from "@/assets/training/training-1.jpg";
 import training2 from "@/assets/training/training-2.jpg";
 import training3 from "@/assets/training/training-3.jpg";
@@ -10,11 +11,11 @@ import training4 from "@/assets/training/training-4.jpg";
 import training5 from "@/assets/training/training-5.jpg";
 
 const trainingImages = [
-  { src: training1, caption: "Mahesh Kumar at Engineering Staff College of India (ESCI), Hyderabad — Training session for NMDC Engineers" },
-  { src: training2, caption: "Mahesh Kumar at Jindal Institute of Power Technology, Raigarh — Training session" },
-  { src: training3, caption: "Mahesh Kumar at Singareni Collieries Company Limited (SCCL) — Session on AI for Productivity in Mining" },
-  { src: training4, caption: "Mahesh Kumar at Engineering Staff College of India (ESCI) — 2-day National Seminar on Operational Safety, Health & Environment in Mining Industry" },
-  { src: training5, caption: "Mahesh Kumar at Jindal Institute of Power Technology, Raigarh — Training session" },
+  { src: training1, alt: "Training session at ESCI Hyderabad for NMDC Engineers" },
+  { src: training2, alt: "Training session at Jindal Institute of Power Technology, Raigarh" },
+  { src: training3, alt: "Session on AI for Productivity in Mining at SCCL" },
+  { src: training4, alt: "National Seminar on Operational Safety, Health & Environment in Mining at ESCI" },
+  { src: training5, alt: "Training session at Jindal Institute of Power Technology, Raigarh" },
 ];
 
 export const Route = createFileRoute("/about")({
