@@ -24,9 +24,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="container-page flex h-16 items-center justify-between">
+      <div className="container-page flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Minematics" className="h-9 w-auto" />
+          <img src={logo} alt="Minematics" className="h-14 w-auto md:h-16" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
