@@ -1,7 +1,7 @@
 import digitalFuelLogging from "@/assets/use-cases/digital-fuel-logging.png";
 import tripCountDumpYard from "@/assets/use-cases/trip-count-dump-yard.png";
 import bucketsPerTruck from "@/assets/use-cases/buckets-per-truck.png";
-import roadConditionAnalysis from "@/assets/use-cases/road-condition-analysis.png";
+
 import truckCycleTime from "@/assets/use-cases/truck-cycle-time.png";
 import maintenanceYardOccupancy from "@/assets/use-cases/maintenance-yard-occupancy.png";
 import excavatorQueueLengths from "@/assets/use-cases/excavator-queue-lengths.png";
@@ -250,77 +250,6 @@ export const useCases: UseCase[] = [
     },
     conclusion:
       "Counting buckets per truck is the simplest way to make the loading face honest. It surfaces the bottleneck, defends the fleet plan, and gives operators a fair, measured view of their own performance.",
-  },
-  {
-    slug: "road-condition-analysis",
-    title: "Road Condition Analysis",
-    shortDescription:
-      "Computer vision and ride-quality analytics that monitor haul road condition continuously, surfacing degradation before it costs cycle time.",
-    hoverPreview:
-      "Per-segment road quality index, color-coded by condition, with risk heatmaps and degradation trends over time.",
-    impactStatement:
-      "Catch the haul road problem on the trend chart, not on the broken suspension.",
-    category: "Safety",
-    secondaryCategories: ["Efficiency", "Logistics"],
-    image: roadConditionAnalysis,
-    problem: {
-      intro:
-        "Haul road condition is one of the largest hidden levers on cycle time, tyre life, and operator safety. Most sites assess roads by walk-throughs, complaints, or post-incident reviews. By the time degradation is reported, it has already cost cycles, damaged tyres, and increased fatigue-related risk for operators on long shifts.",
-      failures: [
-        "Road inspections happen weekly at best, condition between inspections is unknown.",
-        "Operator complaints arrive after the cycle time has already increased.",
-        "Tyre damage and suspension wear are blamed on operators when the road is the cause.",
-        "Grader scheduling is reactive, not driven by measured degradation.",
-      ],
-    },
-    solution: {
-      intro:
-        "Mineoptic combines forward-facing vision on a roving asset with ride-quality telemetry to score each haul-road segment continuously. Segments are color-coded by condition, degradation trends are tracked over time, and risk heatmaps highlight the segments that need a grader before the next shift.",
-      architecture: [
-        "Forward-facing camera on a light vehicle or fitted truck.",
-        "Ride-quality telemetry from on-vehicle accelerometers.",
-        "Vision model classifying surface defects (potholes, corrugations, spillage).",
-        "Segment-based scoring layer producing a Road Quality Index over time.",
-      ],
-    },
-    howItWorks: [
-      { title: "Capture", detail: "Forward camera and accelerometer record road surface and ride quality continuously during normal trips." },
-      { title: "Process", detail: "Vision model detects defects, ride model scores roughness, both tagged to road segment." },
-      { title: "Predict", detail: "Degradation models forecast which segments will cross the action threshold next." },
-      { title: "Output", detail: "Color-coded road map, per-segment index, and a grader work-list for the next shift." },
-    ],
-    features: [
-      "Per-segment Road Quality Index updated continuously.",
-      "Defect classification (pothole, corrugation, spillage, edge break).",
-      "Ride-quality scoring from on-vehicle accelerometers.",
-      "Risk heatmap overlaying incident history on current road condition.",
-      "Grader work-list with prioritised segments for the next shift.",
-    ],
-    dashboard: {
-      intro:
-        "The Road Condition dashboard gives operations and HSE one shared map of haul-road health and risk.",
-      items: [
-        { type: "Map", title: "Road quality map", description: "Top-down haul road view with each segment color-coded by current quality index." },
-        { type: "Map", title: "Risk heatmap", description: "Overlay of near-misses and incidents on degraded segments." },
-        { type: "Chart", title: "Degradation trend", description: "Per-segment quality over the last 14 days, exposing fast-deteriorating sections." },
-        { type: "Alert", title: "Grader work-list", description: "Prioritised list of segments requiring grader action before the next shift." },
-      ],
-    },
-    impact: [
-      { metric: "Cycle time protection", description: "Degraded segments fixed before they slow the haul cycle." },
-      { metric: "Tyre life", description: "Spillage and edge breaks resolved before they cause sidewall damage." },
-      { metric: "Operator safety", description: "Rough segments graded proactively, reducing fatigue and roll-over risk." },
-      { metric: "Grader productivity", description: "Grader hours focused on the segments that actually need work." },
-    ],
-    visual: {
-      caption: "Vision and ride-quality data per segment, scored over time and surfaced as a color-coded map and grader work-list.",
-      beforeAfter: {
-        before: "Roads are graded on a fixed schedule, regardless of where the real damage is.",
-        after: "Roads are graded against a measured quality index, with risk heatmaps guiding priority.",
-      },
-    },
-    conclusion:
-      "Road Condition Analysis closes the loop between road quality, cycle time, and safety. It turns haul-road maintenance from a reactive complaint queue into a proactive, measured operation.",
   },
   {
     slug: "truck-cycle-time-analysis",

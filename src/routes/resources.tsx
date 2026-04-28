@@ -205,25 +205,6 @@ function ResourcesPage() {
         </div>
       </Section>
 
-      {/* E-BOOKS */}
-      <Section className="bg-primary text-primary-foreground">
-        <SectionTitle
-          eyebrow="E-books"
-          title="Longer-form guides"
-          lead="For operations leaders, planners, and IT teams evaluating how to modernise mine data capture."
-        />
-        <div className="grid gap-5 md:grid-cols-2">
-          {ebooks.map((e) => (
-            <div key={e.t} className="rounded-xl border border-white/10 bg-white/5 p-7 backdrop-blur transition-all hover:bg-white/10">
-              <BookOpen className="h-6 w-6 text-accent" />
-              <h3 className="mt-4 text-xl font-bold">{e.t}</h3>
-              {e.sub && <p className="mt-1 text-sm italic text-primary-foreground/70">{e.sub}</p>}
-              <p className="mt-3 text-sm text-primary-foreground/80">{e.d}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
       {/* Use Case Modal */}
       <Dialog open={!!activeUseCase} onOpenChange={(open) => !open && setOpenSlug(null)}>
         <DialogContent className="max-h-[92vh] w-[96vw] max-w-6xl overflow-y-auto p-0 sm:rounded-2xl">
