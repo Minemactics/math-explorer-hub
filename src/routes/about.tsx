@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, SectionTitle, Eyebrow } from "@/components/Section";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 import training1 from "@/assets/training/training-1.jpg";
 import training2 from "@/assets/training/training-2.jpg";
 import training3 from "@/assets/training/training-3.jpg";
@@ -10,11 +11,11 @@ import training4 from "@/assets/training/training-4.jpg";
 import training5 from "@/assets/training/training-5.jpg";
 
 const trainingImages = [
-  { src: training1, caption: "Mahesh Kumar at Engineering Staff College of India (ESCI), Hyderabad — Training session for NMDC Engineers" },
-  { src: training2, caption: "Mahesh Kumar at Jindal Institute of Power Technology, Raigarh — Training session" },
-  { src: training3, caption: "Mahesh Kumar at Singareni Collieries Company Limited (SCCL) — Session on AI for Productivity in Mining" },
-  { src: training4, caption: "Mahesh Kumar at Engineering Staff College of India (ESCI) — 2-day National Seminar on Operational Safety, Health & Environment in Mining Industry" },
-  { src: training5, caption: "Mahesh Kumar at Jindal Institute of Power Technology, Raigarh — Training session" },
+  { src: training1, alt: "Training session at ESCI Hyderabad for NMDC Engineers" },
+  { src: training2, alt: "Training session at Jindal Institute of Power Technology, Raigarh" },
+  { src: training3, alt: "Session on AI for Productivity in Mining at SCCL" },
+  { src: training4, alt: "National Seminar on Operational Safety, Health & Environment in Mining at ESCI" },
+  { src: training5, alt: "Training session at Jindal Institute of Power Technology, Raigarh" },
 ];
 
 export const Route = createFileRoute("/about")({
@@ -38,7 +39,20 @@ const mission = [
 ];
 
 function AboutPage() {
-  const autoplay = useRef(Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true }));
+  const autoplay = useRef(Autoplay({ delay: 2800, stopOnInteraction: false, stopOnMouseEnter: true }));
+  const [api, setApi] = useState<CarouselApi>();
+  const [selected, setSelected] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    setSelected(api.selectedScrollSnap());
+    const onSelect = () => setSelected(api.selectedScrollSnap());
+    api.on("select", onSelect);
+    api.on("reInit", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
   return (
     <>
       <section className="bg-hero-gradient text-primary-foreground">
@@ -109,18 +123,32 @@ function AboutPage() {
         <Carousel
           opts={{ loop: true, align: "start" }}
           plugins={[autoplay.current]}
+          setApi={setApi}
           className="mx-auto max-w-5xl"
         >
           <CarouselContent>
             {trainingImages.map((img, i) => (
               <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/2">
                 <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-card">
-                  <img src={img.src} alt={img.caption} className="aspect-video w-full object-cover" loading="lazy" />
-                  <p className="px-5 py-4 text-sm text-muted-foreground">{img.caption}</p>
+                  <img src={img.src} alt={img.alt} className="aspect-video w-full object-cover" loading="lazy" />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
+          <div className="mt-6 flex justify-center gap-2">
+            {trainingImages.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                aria-label={`Go to slide ${i + 1}`}
+                onClick={() => api?.scrollTo(i)}
+                className={cn(
+                  "h-2.5 rounded-full transition-all",
+                  selected === i ? "w-6 bg-primary" : "w-2.5 bg-muted-foreground/40 hover:bg-muted-foreground/70"
+                )}
+              />
+            ))}
+          </div>
         </Carousel>
       </Section>
 
