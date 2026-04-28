@@ -55,6 +55,13 @@ const blogs = [
 function ResourcesPage() {
   const [activeFilter, setActiveFilter] = useState<UseCaseCategory | "All">("All");
   const [openSlug, setOpenSlug] = useState<string | null>(null);
+  const dialogContentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (openSlug && dialogContentRef.current) {
+      dialogContentRef.current.scrollTo({ top: 0, behavior: "auto" });
+    }
+  }, [openSlug]);
 
   const filteredUseCases = useMemo(
     () =>
@@ -198,7 +205,7 @@ function ResourcesPage() {
 
       {/* Use Case Modal */}
       <Dialog open={!!activeUseCase} onOpenChange={(open) => !open && setOpenSlug(null)}>
-        <DialogContent className="max-h-[92vh] w-[96vw] max-w-6xl overflow-y-auto p-0 sm:rounded-2xl">
+        <DialogContent ref={dialogContentRef} className="max-h-[92vh] w-[96vw] max-w-6xl overflow-y-auto p-0 sm:rounded-2xl">
           {activeUseCase && (
             <>
               <DialogTitle className="sr-only">{activeUseCase.title}</DialogTitle>
