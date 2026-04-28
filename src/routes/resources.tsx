@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
-  BookOpen,
   FileText,
   ShieldAlert,
   Truck,
@@ -53,17 +52,16 @@ const blogs = [
   { t: "Adoption is the hardest pillar", d: "Connectivity, Accuracy, Granularity are all engineering problems. Adoptability is a design problem, and it is the one that decides whether the system gets used. Here is how we approach it." },
 ];
 
-const ebooks = [
-  { t: "The Four Pillars of Mining Intelligence", sub: "The flagship Minematics guide.", d: "A detailed walk-through of Connectivity, Accuracy, Granularity, and Adoptability, why these four, how they interact, and how to score your current setup against each one. Includes a pillar-by-pillar assessment framework and representative operational metrics." },
-  { t: "From Paper to Digital, A Practical Playbook for Mines", d: "A practical guide to retiring paper-based data capture in a mine, which workflows to start with, how to handle the offline zones, how to win the crew over, and how to measure the return within one quarter." },
-  { t: "Sizing the Tipper Fleet, A Data-Driven Method", d: "The planning question that rule-of-thumb has never answered well. This e-book walks through a data-driven method using bucket counts, load times, and queue times, and shows how granular visual analytics makes it practical." },
-  { t: "Choosing Between GPS, Mineoptic, and Enterprise FMS", d: "A candid buyers guide for mines deciding how far up the stack to go. What each category is actually good at, where each one stops, and how to match the choice to the operation." },
-  { t: "Data Sovereignty in Mining Operations", d: "Why production and commercial data should stay inside the mines infrastructure, what data sovereignty by design actually means, and how Mineoptic Canvas is architected to deliver it." },
-];
-
 function ResourcesPage() {
   const [activeFilter, setActiveFilter] = useState<UseCaseCategory | "All">("All");
   const [openSlug, setOpenSlug] = useState<string | null>(null);
+  const dialogContentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (openSlug && dialogContentRef.current) {
+      dialogContentRef.current.scrollTo({ top: 0, behavior: "auto" });
+    }
+  }, [openSlug]);
 
   const filteredUseCases = useMemo(
     () =>
@@ -205,28 +203,9 @@ function ResourcesPage() {
         </div>
       </Section>
 
-      {/* E-BOOKS */}
-      <Section className="bg-primary text-primary-foreground">
-        <SectionTitle
-          eyebrow="E-books"
-          title="Longer-form guides"
-          lead="For operations leaders, planners, and IT teams evaluating how to modernise mine data capture."
-        />
-        <div className="grid gap-5 md:grid-cols-2">
-          {ebooks.map((e) => (
-            <div key={e.t} className="rounded-xl border border-white/10 bg-white/5 p-7 backdrop-blur transition-all hover:bg-white/10">
-              <BookOpen className="h-6 w-6 text-accent" />
-              <h3 className="mt-4 text-xl font-bold">{e.t}</h3>
-              {e.sub && <p className="mt-1 text-sm italic text-primary-foreground/70">{e.sub}</p>}
-              <p className="mt-3 text-sm text-primary-foreground/80">{e.d}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
       {/* Use Case Modal */}
       <Dialog open={!!activeUseCase} onOpenChange={(open) => !open && setOpenSlug(null)}>
-        <DialogContent className="max-h-[92vh] w-[96vw] max-w-6xl overflow-y-auto p-0 sm:rounded-2xl">
+        <DialogContent ref={dialogContentRef} className="max-h-[92vh] w-[96vw] max-w-6xl overflow-y-auto p-0 sm:rounded-2xl">
           {activeUseCase && (
             <>
               <DialogTitle className="sr-only">{activeUseCase.title}</DialogTitle>

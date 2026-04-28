@@ -75,7 +75,12 @@ function ContactPage() {
                 {b.items.map((it) => (
                   <li key={it.l} className="flex flex-wrap items-center gap-2 text-sm">
                     <span className="font-semibold text-primary">{it.l}:</span>
-                    <a href={it.href} className="text-accent hover:underline">{it.v}</a>
+                    <a
+                      href={it.href}
+                      target={it.href.startsWith("http") ? "_blank" : undefined}
+                      rel={it.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="text-accent hover:underline"
+                    >{it.v}</a>
                   </li>
                 ))}
               </ul>
