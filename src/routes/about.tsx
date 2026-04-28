@@ -123,18 +123,32 @@ function AboutPage() {
         <Carousel
           opts={{ loop: true, align: "start" }}
           plugins={[autoplay.current]}
+          setApi={setApi}
           className="mx-auto max-w-5xl"
         >
           <CarouselContent>
             {trainingImages.map((img, i) => (
               <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/2">
                 <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-card">
-                  <img src={img.src} alt={img.caption} className="aspect-video w-full object-cover" loading="lazy" />
-                  <p className="px-5 py-4 text-sm text-muted-foreground">{img.caption}</p>
+                  <img src={img.src} alt={img.alt} className="aspect-video w-full object-cover" loading="lazy" />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
+          <div className="mt-6 flex justify-center gap-2">
+            {trainingImages.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                aria-label={`Go to slide ${i + 1}`}
+                onClick={() => api?.scrollTo(i)}
+                className={cn(
+                  "h-2.5 rounded-full transition-all",
+                  selected === i ? "w-6 bg-primary" : "w-2.5 bg-muted-foreground/40 hover:bg-muted-foreground/70"
+                )}
+              />
+            ))}
+          </div>
         </Carousel>
       </Section>
 
