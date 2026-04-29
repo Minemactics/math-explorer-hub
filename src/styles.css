@@ -63,7 +63,7 @@
   --muted: oklch(0.96 0.008 230);
   --muted-foreground: oklch(0.48 0.02 240);
 
-  --accent: oklch(0.62 0.09 195);             /* teal */
+  --accent: oklch(0.48 0.09 195);             /* teal — darkened for WCAG AA contrast */
   --accent-foreground: oklch(0.99 0.005 200);
 
   --destructive: oklch(0.58 0.22 25);
