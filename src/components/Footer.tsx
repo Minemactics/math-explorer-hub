@@ -41,7 +41,7 @@ export function Footer() {
             <li><Link to="/about" className="hover:text-accent">About Us</Link></li>
             <li><Link to="/careers" className="hover:text-accent">Careers</Link></li>
             <li><Link to="/contact" className="hover:text-accent">Contact</Link></li>
-            <li><a href="mailto:hello@minematics.com" className="hover:text-accent">hello@minematics.com</a></li>
+            <li><a href="mailto:info@minematics.in" className="hover:text-accent">info@minematics.in</a></li>
           </ul>
         </div>
       </div>
