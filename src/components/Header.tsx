@@ -1,5 +1,5 @@
 import { Link, useLocation } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, Menu, X, Phone, Mail } from "lucide-react";
 import logo from "@/assets/minematics-logo.png";
 
@@ -21,8 +21,14 @@ const productLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
   const location = useLocation();
   const productsActive = location.pathname.startsWith("/products");
+
+  // Close dropdown whenever the route changes
+  useEffect(() => {
+    setProductsOpen(false);
+  }, [location.pathname]);
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/85 backdrop-blur-md">
@@ -44,20 +50,29 @@ export function Header() {
             </Link>
           ))}
 
-          <div className="group relative">
+          <div
+            className="relative"
+            onMouseEnter={() => setProductsOpen(true)}
+            onMouseLeave={() => setProductsOpen(false)}
+          >
             <button
               type="button"
+              onClick={() => setProductsOpen((v) => !v)}
               className={`inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors ${productsActive ? "bg-muted text-accent" : "text-foreground/80 hover:bg-muted hover:text-foreground"}`}
               aria-haspopup="true"
+              aria-expanded={productsOpen}
             >
               Products
               <ChevronDown className="h-4 w-4" />
             </button>
-            <div className="invisible absolute left-0 top-full z-50 mt-2 w-72 rounded-xl border border-border bg-background p-2 opacity-0 shadow-elevated transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div
+              className={`absolute left-0 top-full z-50 mt-2 w-72 rounded-xl border border-border bg-background p-2 shadow-elevated transition-all ${productsOpen ? "visible opacity-100" : "invisible opacity-0"}`}
+            >
               {productLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
+                  onClick={() => setProductsOpen(false)}
                   className="block rounded-lg px-3 py-3 transition-colors hover:bg-muted"
                   activeProps={{ className: "block rounded-lg bg-muted px-3 py-3 text-accent" }}
                 >
