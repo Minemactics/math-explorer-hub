@@ -140,7 +140,7 @@ function CanvasPage() {
           <h2 className="text-3xl font-bold md:text-4xl">Compose your digital twin.</h2>
           <p className="mt-4 text-lg text-accent-foreground/90">See Mineoptic Canvas wired to your real data.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link to="/contact" className="rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-elevated transition-transform hover:-translate-y-0.5">Request a demo</Link>
+            <a href="https://calendly.com/dhruv-minematics/minematics" target="_blank" rel="noopener noreferrer" className="rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-elevated transition-transform hover:-translate-y-0.5">Request a demo</a>
             <Link to="/products" className="inline-flex items-center gap-2 rounded-md border border-white/40 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur hover:bg-white/20">
               Back to all products <ArrowRight className="h-4 w-4" />
             </Link>

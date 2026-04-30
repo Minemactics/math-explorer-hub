@@ -1,7 +1,9 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, Phone, Mail } from "lucide-react";
 import logo from "@/assets/minematics-logo.png";
+
+const CALENDLY_URL = "https://calendly.com/dhruv-minematics/minematics";
 
 const nav = [
   { to: "/" as const, label: "Home" },
@@ -24,7 +26,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="container-page flex h-20 items-center justify-between">
+      <div className="container-page flex h-20 items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="Minematics" className="h-14 w-auto md:h-16" />
         </Link>
@@ -78,12 +80,31 @@ export function Header() {
             </Link>
           ))}
 
-          <Link
-            to="/contact"
+          <div className="ml-2 hidden flex-col items-end gap-0.5 border-l border-border/60 pl-4 text-xs leading-tight lg:flex">
+            <a
+              href="tel:+919502136760"
+              className="inline-flex items-center gap-1.5 font-medium text-foreground/80 transition-colors hover:text-accent"
+            >
+              <Phone className="h-3.5 w-3.5" />
+              +91 95021 36760
+            </a>
+            <a
+              href="mailto:info@minematics.in"
+              className="inline-flex items-center gap-1.5 font-medium text-foreground/80 transition-colors hover:text-accent"
+            >
+              <Mail className="h-3.5 w-3.5" />
+              info@minematics.in
+            </a>
+          </div>
+
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-sm transition-transform hover:-translate-y-0.5"
           >
             Request a demo
-          </Link>
+          </a>
         </nav>
 
         <button
@@ -133,13 +154,32 @@ export function Header() {
               </Link>
             ))}
 
-            <Link
-              to="/contact"
+            <div className="mt-2 flex flex-col gap-1 border-t border-border pt-3">
+              <a
+                href="tel:+919502136760"
+                className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-muted hover:text-foreground"
+              >
+                <Phone className="h-4 w-4" />
+                +91 95021 36760
+              </a>
+              <a
+                href="mailto:info@minematics.in"
+                className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-muted hover:text-foreground"
+              >
+                <Mail className="h-4 w-4" />
+                info@minematics.in
+              </a>
+            </div>
+
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="mt-2 rounded-md bg-accent px-3 py-2 text-center text-sm font-semibold text-accent-foreground"
             >
               Request a demo
-            </Link>
+            </a>
           </nav>
         </div>
       )}
