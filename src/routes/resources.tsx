@@ -12,6 +12,7 @@ import { Section, SectionTitle, Eyebrow } from "@/components/Section";
 import { useCases, useCaseCategories, type UseCaseCategory } from "@/data/useCases";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { UseCaseDetail } from "@/components/UseCaseDetail";
+import { ClientLogos } from "@/components/ClientLogos";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
@@ -202,6 +203,9 @@ function ResourcesPage() {
           ))}
         </div>
       </Section>
+
+      {/* CLIENT LOGOS */}
+      <ClientLogos />
 
       {/* Use Case Modal */}
       <Dialog open={!!activeUseCase} onOpenChange={(open) => !open && setOpenSlug(null)}>
