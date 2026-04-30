@@ -258,6 +258,10 @@ function HomePage() {
         </div>
       </Section>
 
+      {/* CLIENT LOGOS */}
+      <ClientLogos />
+
+
       {/* WHY CHOOSE */}
       <Section>
         <SectionTitle eyebrow="Why mines choose Minematics" title="What makes Mineoptic different" />
