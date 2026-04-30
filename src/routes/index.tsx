@@ -115,9 +115,9 @@ function HomePage() {
             visibility into your operations, without the cost and complexity of enterprise FMS.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link to="/contact" className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground shadow-glow transition-transform hover:-translate-y-0.5">
+            <a href="https://calendly.com/dhruv-minematics/minematics" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground shadow-glow transition-transform hover:-translate-y-0.5">
               Request a demo <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
             <Link to="/contact" className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition-colors hover:bg-white/10">
               Talk to an expert
             </Link>
@@ -276,7 +276,7 @@ function HomePage() {
           <h2 className="text-3xl font-bold md:text-5xl">Tell us about your mine.</h2>
           <p className="mt-4 text-lg text-accent-foreground/90">We will tell you where Mineoptic fits.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link to="/contact" className="rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-elevated transition-transform hover:-translate-y-0.5">Request a demo</Link>
+            <a href="https://calendly.com/dhruv-minematics/minematics" target="_blank" rel="noopener noreferrer" className="rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-elevated transition-transform hover:-translate-y-0.5">Request a demo</a>
           </div>
         </div>
       </Section>
