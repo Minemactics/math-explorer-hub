@@ -69,8 +69,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="container-page flex flex-col gap-2 py-5 text-xs text-primary-foreground/60 md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} Minematics Technologies. Hyderabad, Telangana, India.</p>
+        <div className="container-page flex flex-col gap-2 py-5 text-xs text-primary-foreground/60 md:flex-row md:items-center md:justify-end">
           <p>Mineoptic: Mining Intelligence, Purpose-Built.</p>
         </div>
       </div>
