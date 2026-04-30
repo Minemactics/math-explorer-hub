@@ -5,6 +5,7 @@ import overviewIllustration from "@/assets/illustration-overview.png";
 import dashboardLite from "@/assets/dashboard-lite.png";
 import dashboardPlus from "@/assets/dashboard-plus.png";
 import dashboardCanvas from "@/assets/dashboard-canvas.png";
+import { ClientLogos } from "@/components/ClientLogos";
 import { Section, SectionTitle, Eyebrow } from "@/components/Section";
 
 export const Route = createFileRoute("/")({
@@ -256,6 +257,10 @@ function HomePage() {
           ))}
         </div>
       </Section>
+
+      {/* CLIENT LOGOS */}
+      <ClientLogos />
+
 
       {/* WHY CHOOSE */}
       <Section>

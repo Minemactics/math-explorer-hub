@@ -9,6 +9,7 @@ import training2 from "@/assets/training/training-2.jpg";
 import training3 from "@/assets/training/training-3.jpg";
 import training4 from "@/assets/training/training-4.jpg";
 import training5 from "@/assets/training/training-5.jpg";
+import { ClientLogos } from "@/components/ClientLogos";
 
 const trainingImages = [
   { src: training1, alt: "Training session at ESCI Hyderabad for NMDC Engineers" },
@@ -117,6 +118,9 @@ function AboutPage() {
           ))}
         </div>
       </Section>
+
+      {/* CLIENT LOGOS */}
+      <ClientLogos />
 
       <Section>
         <SectionTitle eyebrow="On the ground" title="Training & industry engagement" />
