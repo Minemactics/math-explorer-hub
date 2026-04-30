@@ -80,7 +80,7 @@ export function Header() {
             </Link>
           ))}
 
-          <div className="ml-2 hidden flex-col items-end gap-0.5 border-l border-border/60 pl-4 text-xs leading-tight lg:flex">
+          <div className="ml-2 hidden flex-col items-end gap-0.5 border-l border-border/60 pl-4 text-xs leading-tight md:flex">
             <a
               href="tel:+919502136760"
               className="inline-flex items-center gap-1.5 font-medium text-foreground/80 transition-colors hover:text-accent"
