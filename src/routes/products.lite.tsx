@@ -111,8 +111,10 @@ function LitePage() {
         <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-elevated">
           <img
             src={dashboardLite}
-            alt="Mineoptic Lite mobile app and fuel ledger dashboard"
-            loading="lazy"
+            alt="Mineoptic Lite fuel ledger dashboard showing reconciled fuel transactions per truck and shift"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             width={1280}
             height={800}
             className="h-auto w-full object-cover"

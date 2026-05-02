@@ -98,10 +98,13 @@ function HomePage() {
       <section className="relative isolate overflow-hidden bg-hero-gradient text-primary-foreground">
         <img
           src={heroImg}
-          alt="Aerial view of an open-pit mine"
+          alt="Aerial view of an Indian open-cast mine with haul trucks and excavators"
           className="absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-overlay"
           width={1920}
           height={1080}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="container-page relative py-24 md:py-36">
           <Eyebrow>Mineoptic Suite • Lite • Plus • Canvas</Eyebrow>
@@ -234,8 +237,9 @@ function HomePage() {
               <div className="aspect-[16/10] w-full overflow-hidden bg-white/5">
                 <img
                   src={p.image}
-                  alt={`${p.name} dashboard preview`}
+                  alt={`${p.name} dashboard preview — purpose-built mining intelligence module`}
                   loading="lazy"
+                  decoding="async"
                   width={1280}
                   height={800}
                   className="h-full w-full object-cover"

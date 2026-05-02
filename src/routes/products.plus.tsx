@@ -108,8 +108,10 @@ function PlusPage() {
         <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-elevated">
           <img
             src={dashboardPlus}
-            alt="Mineoptic Plus fleet tracking dashboard"
-            loading="lazy"
+            alt="Mineoptic Plus fleet tracking dashboard showing live tipper status across the pit"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             width={1280}
             height={800}
             className="h-auto w-full object-cover"

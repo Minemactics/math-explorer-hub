@@ -104,8 +104,10 @@ function CanvasPage() {
         <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-elevated">
           <img
             src={dashboardCanvas}
-            alt="Mineoptic Canvas multi-dashboard digital twin view"
-            loading="lazy"
+            alt="Mineoptic Canvas mining BI dashboard composing production, fuel and fleet data on one canvas"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             width={1280}
             height={800}
             className="h-auto w-full object-cover"
