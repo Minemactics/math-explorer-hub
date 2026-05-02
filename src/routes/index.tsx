@@ -7,18 +7,19 @@ import dashboardPlus from "@/assets/dashboard-plus.png";
 import dashboardCanvas from "@/assets/dashboard-canvas.png";
 import { ClientLogos } from "@/components/ClientLogos";
 import { Section, SectionTitle, Eyebrow } from "@/components/Section";
+import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Minematics: Mining Intelligence, Purpose-Built" },
-      { name: "description", content: "See every bucket, every bottleneck, every shift, in real time. Mineoptic gives mines granular, reliable visibility without enterprise FMS cost." },
-      { property: "og:title", content: "Minematics: Mining Intelligence, Purpose-Built" },
-      { property: "og:description", content: "Granular, real-time mining intelligence from the pit to the plant." },
-      { property: "og:image", content: heroImg },
-      { name: "twitter:image", content: heroImg },
-    ],
-  }),
+  head: () => {
+    const s = seo({
+      title: "Mining Intelligence Platform for Open-Cast Mines | Minematics",
+      description:
+        "Mineoptic by Minematics gives mines real-time visibility into fleet, fuel, and production — purpose-built for Indian open-cast mining. Request a demo.",
+      path: "/",
+      image: heroImg,
+    });
+    return { meta: s.meta, links: s.links };
+  },
   component: HomePage,
 });
 
@@ -97,10 +98,13 @@ function HomePage() {
       <section className="relative isolate overflow-hidden bg-hero-gradient text-primary-foreground">
         <img
           src={heroImg}
-          alt="Aerial view of an open-pit mine"
+          alt="Aerial view of an Indian open-cast mine with haul trucks and excavators"
           className="absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-overlay"
           width={1920}
           height={1080}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="container-page relative py-24 md:py-36">
           <Eyebrow>Mineoptic Suite • Lite • Plus • Canvas</Eyebrow>
@@ -233,8 +237,9 @@ function HomePage() {
               <div className="aspect-[16/10] w-full overflow-hidden bg-white/5">
                 <img
                   src={p.image}
-                  alt={`${p.name} dashboard preview`}
+                  alt={`${p.name} dashboard preview — purpose-built mining intelligence module`}
                   loading="lazy"
+                  decoding="async"
                   width={1280}
                   height={800}
                   className="h-full w-full object-cover"

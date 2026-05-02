@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
 import { UseCaseDetail } from "@/components/UseCaseDetail";
 import { getUseCase } from "@/data/useCases";
+import { seo, jsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/resources/use-cases/$slug")({
   loader: ({ params }) => {
@@ -12,14 +13,27 @@ export const Route = createFileRoute("/resources/use-cases/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [] };
     const { useCase } = loaderData;
+    const path = `/resources/use-cases/${useCase.slug}`;
+    const title = `${useCase.title} | Mining Use Case | Minematics`;
+    const s = seo({
+      title,
+      description: useCase.shortDescription,
+      path,
+      image: useCase.image,
+      type: "article",
+    });
     return {
-      meta: [
-        { title: `${useCase.title} | Minematics Use Cases` },
-        { name: "description", content: useCase.shortDescription },
-        { property: "og:title", content: `${useCase.title} | Minematics` },
-        { property: "og:description", content: useCase.shortDescription },
-        { property: "og:image", content: useCase.image },
-        { name: "twitter:image", content: useCase.image },
+      meta: s.meta,
+      links: s.links,
+      scripts: [
+        jsonLd(
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Resources", path: "/resources" },
+            { name: "Use Cases", path: "/resources" },
+            { name: useCase.title, path },
+          ]),
+        ),
       ],
     };
   },

@@ -1,16 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Phone, LifeBuoy, Handshake, MapPin, Linkedin, Twitter } from "lucide-react";
 import { Section, Eyebrow } from "@/components/Section";
+import { seo, jsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact Us | Minematics" },
-      { name: "description", content: "Tell us about your mine. We will tell you where Mineoptic fits. Sales, support, partnerships and press." },
-      { property: "og:title", content: "Contact Minematics" },
-      { property: "og:description", content: "Talk to sales, customer support, partnerships, or general enquiries." },
-    ],
-  }),
+  head: () => {
+    const s = seo({
+      title: "Contact Minematics | Mining Intelligence Demos & Partnerships",
+      description:
+        "Talk to our team about Mineoptic. Based in Hyderabad, serving mines across India. Email info@minematics.in or call +91 95021 36760.",
+      path: "/contact",
+    });
+    return {
+      meta: s.meta,
+      links: s.links,
+      scripts: [
+        jsonLd(
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+        ),
+      ],
+    };
+  },
   component: ContactPage,
 });
 

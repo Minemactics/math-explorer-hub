@@ -2,18 +2,38 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Radio } from "lucide-react";
 import dashboardPlus from "@/assets/dashboard-plus.png";
 import { Section, Eyebrow } from "@/components/Section";
+import { RelatedUseCases } from "@/components/RelatedUseCases";
+import { seo, jsonLd, breadcrumbJsonLd, softwareAppJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/plus")({
-  head: () => ({
-    meta: [
-      { title: "Mineoptic Plus, Fleet tracking on the mines own network | Minematics" },
-      { name: "description", content: "Everything in Lite, plus near-live fleet tracking with status (empty, loaded, idle, maintenance), designed for low-network mine zones." },
-      { property: "og:title", content: "Mineoptic Plus, Status, not just position." },
-      { property: "og:description", content: "Near-live fleet intelligence on the mines own network." },
-      { property: "og:image", content: dashboardPlus },
-      { name: "twitter:image", content: dashboardPlus },
-    ],
-  }),
+  head: () => {
+    const title = "Fleet Tracking on the Mine's Own Network | Mineoptic Plus";
+    const description =
+      "Near-live fleet visibility for open-cast mines, on a private network that works in dead zones. Know every tipper's status, queue, and productive hours.";
+    const path = "/products/plus";
+    const s = seo({ title, description, path, image: dashboardPlus });
+    return {
+      meta: s.meta,
+      links: s.links,
+      scripts: [
+        jsonLd(
+          softwareAppJsonLd({
+            name: "Mineoptic Plus",
+            description,
+            path,
+            image: dashboardPlus,
+          }),
+        ),
+        jsonLd(
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Products", path: "/products" },
+            { name: "Mineoptic Plus", path },
+          ]),
+        ),
+      ],
+    };
+  },
   component: PlusPage,
 });
 
@@ -88,8 +108,10 @@ function PlusPage() {
         <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-elevated">
           <img
             src={dashboardPlus}
-            alt="Mineoptic Plus fleet tracking dashboard"
-            loading="lazy"
+            alt="Mineoptic Plus fleet tracking dashboard showing live tipper status across the pit"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             width={1280}
             height={800}
             className="h-auto w-full object-cover"
@@ -139,6 +161,12 @@ function PlusPage() {
           </div>
         </div>
       </Section>
+
+      <RelatedUseCases
+        slugs={["truck-cycle-time-analysis", "queue-lengths-at-excavators", "maintenance-yard-occupancy-analysis"]}
+        title="See Mineoptic Plus in the field"
+        lead="Use cases that depend on near-live fleet status across the pit."
+      />
 
       <Section className="bg-teal-gradient text-accent-foreground">
         <div className="mx-auto max-w-3xl text-center">
