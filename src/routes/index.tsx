@@ -7,18 +7,19 @@ import dashboardPlus from "@/assets/dashboard-plus.png";
 import dashboardCanvas from "@/assets/dashboard-canvas.png";
 import { ClientLogos } from "@/components/ClientLogos";
 import { Section, SectionTitle, Eyebrow } from "@/components/Section";
+import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Minematics: Mining Intelligence, Purpose-Built" },
-      { name: "description", content: "See every bucket, every bottleneck, every shift, in real time. Mineoptic gives mines granular, reliable visibility without enterprise FMS cost." },
-      { property: "og:title", content: "Minematics: Mining Intelligence, Purpose-Built" },
-      { property: "og:description", content: "Granular, real-time mining intelligence from the pit to the plant." },
-      { property: "og:image", content: heroImg },
-      { name: "twitter:image", content: heroImg },
-    ],
-  }),
+  head: () => {
+    const s = seo({
+      title: "Mining Intelligence Platform for Open-Cast Mines | Minematics",
+      description:
+        "Mineoptic by Minematics gives mines real-time visibility into fleet, fuel, and production — purpose-built for Indian open-cast mining. Request a demo.",
+      path: "/",
+      image: heroImg,
+    });
+    return { meta: s.meta, links: s.links };
+  },
   component: HomePage,
 });
 
