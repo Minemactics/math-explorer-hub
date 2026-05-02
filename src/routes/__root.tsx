@@ -49,11 +49,6 @@ export const Route = createRootRoute({
       { rel: "preconnect", href: "https://calendly.com" },
       { rel: "preconnect", href: "https://assets.calendly.com" },
       { rel: "dns-prefetch", href: "https://calendly.com" },
-      {
-        rel: "preload",
-        href: "https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap",
-        as: "style" as unknown as undefined,
-      } as { rel: string; href: string },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" },
     ],
     scripts: [jsonLd(organizationJsonLd)],
