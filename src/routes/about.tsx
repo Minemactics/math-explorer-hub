@@ -10,6 +10,7 @@ import training3 from "@/assets/training/training-3.jpg";
 import training4 from "@/assets/training/training-4.jpg";
 import training5 from "@/assets/training/training-5.jpg";
 import { ClientLogos } from "@/components/ClientLogos";
+import { seo, jsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 const trainingImages = [
   { src: training1, alt: "Training session at ESCI Hyderabad for NMDC Engineers" },
@@ -40,11 +41,6 @@ export const Route = createFileRoute("/about")({
       ],
     };
   },
-      { name: "description", content: "Minematics is a mining intelligence company. We build Mineoptic, purpose-built, operationally honest, and adopted on the ground." },
-      { property: "og:title", content: "About Minematics" },
-      { property: "og:description", content: "We exist to close the intelligence gap between the pit and the office." },
-    ],
-  }),
   component: AboutPage,
 });
 
