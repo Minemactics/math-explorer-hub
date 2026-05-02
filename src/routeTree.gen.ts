@@ -9,18 +9,35 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as ProductsRouteImport } from './routes/products'
+import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AccessoiresSplatRouteImport } from './routes/Accessoires-$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsPlusRouteImport } from './routes/products.plus'
 import { Route as ProductsLiteRouteImport } from './routes/products.lite'
 import { Route as ProductsCanvasRouteImport } from './routes/products.canvas'
+import { Route as CategorySplatRouteImport } from './routes/category.$'
+import { Route as AuthorSplatRouteImport } from './routes/author.$'
 import { Route as ResourcesUseCasesSlugRouteImport } from './routes/resources.use-cases.$slug'
 
+const SolutionsRoute = SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
@@ -31,9 +48,19 @@ const ProductsRoute = ProductsRouteImport.update({
   path: '/products',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactUsRoute = ContactUsRouteImport.update({
+  id: '/contact-us',
+  path: '/contact-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesRoute = CaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareersRoute = CareersRouteImport.update({
@@ -44,6 +71,11 @@ const CareersRoute = CareersRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessoiresSplatRoute = AccessoiresSplatRouteImport.update({
+  id: '/Accessoires-$',
+  path: '/Accessoires-$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -71,6 +103,16 @@ const ProductsCanvasRoute = ProductsCanvasRouteImport.update({
   path: '/canvas',
   getParentRoute: () => ProductsRoute,
 } as any)
+const CategorySplatRoute = CategorySplatRouteImport.update({
+  id: '/category/$',
+  path: '/category/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthorSplatRoute = AuthorSplatRouteImport.update({
+  id: '/author/$',
+  path: '/author/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResourcesUseCasesSlugRoute = ResourcesUseCasesSlugRouteImport.update({
   id: '/use-cases/$slug',
   path: '/use-cases/$slug',
@@ -79,11 +121,18 @@ const ResourcesUseCasesSlugRoute = ResourcesUseCasesSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/Accessoires-$': typeof AccessoiresSplatRoute
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
+  '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/contact-us': typeof ContactUsRoute
   '/products': typeof ProductsRouteWithChildren
   '/resources': typeof ResourcesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/solutions': typeof SolutionsRoute
+  '/author/$': typeof AuthorSplatRoute
+  '/category/$': typeof CategorySplatRoute
   '/products/canvas': typeof ProductsCanvasRoute
   '/products/lite': typeof ProductsLiteRoute
   '/products/plus': typeof ProductsPlusRoute
@@ -92,10 +141,17 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/Accessoires-$': typeof AccessoiresSplatRoute
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
+  '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/contact-us': typeof ContactUsRoute
   '/resources': typeof ResourcesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/solutions': typeof SolutionsRoute
+  '/author/$': typeof AuthorSplatRoute
+  '/category/$': typeof CategorySplatRoute
   '/products/canvas': typeof ProductsCanvasRoute
   '/products/lite': typeof ProductsLiteRoute
   '/products/plus': typeof ProductsPlusRoute
@@ -105,11 +161,18 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/Accessoires-$': typeof AccessoiresSplatRoute
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
+  '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/contact-us': typeof ContactUsRoute
   '/products': typeof ProductsRouteWithChildren
   '/resources': typeof ResourcesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/solutions': typeof SolutionsRoute
+  '/author/$': typeof AuthorSplatRoute
+  '/category/$': typeof CategorySplatRoute
   '/products/canvas': typeof ProductsCanvasRoute
   '/products/lite': typeof ProductsLiteRoute
   '/products/plus': typeof ProductsPlusRoute
@@ -120,11 +183,18 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/Accessoires-$'
     | '/about'
     | '/careers'
+    | '/case-studies'
     | '/contact'
+    | '/contact-us'
     | '/products'
     | '/resources'
+    | '/sitemap.xml'
+    | '/solutions'
+    | '/author/$'
+    | '/category/$'
     | '/products/canvas'
     | '/products/lite'
     | '/products/plus'
@@ -133,10 +203,17 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/Accessoires-$'
     | '/about'
     | '/careers'
+    | '/case-studies'
     | '/contact'
+    | '/contact-us'
     | '/resources'
+    | '/sitemap.xml'
+    | '/solutions'
+    | '/author/$'
+    | '/category/$'
     | '/products/canvas'
     | '/products/lite'
     | '/products/plus'
@@ -145,11 +222,18 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/Accessoires-$'
     | '/about'
     | '/careers'
+    | '/case-studies'
     | '/contact'
+    | '/contact-us'
     | '/products'
     | '/resources'
+    | '/sitemap.xml'
+    | '/solutions'
+    | '/author/$'
+    | '/category/$'
     | '/products/canvas'
     | '/products/lite'
     | '/products/plus'
@@ -159,15 +243,36 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccessoiresSplatRoute: typeof AccessoiresSplatRoute
   AboutRoute: typeof AboutRoute
   CareersRoute: typeof CareersRoute
+  CaseStudiesRoute: typeof CaseStudiesRoute
   ContactRoute: typeof ContactRoute
+  ContactUsRoute: typeof ContactUsRoute
   ProductsRoute: typeof ProductsRouteWithChildren
   ResourcesRoute: typeof ResourcesRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SolutionsRoute: typeof SolutionsRoute
+  AuthorSplatRoute: typeof AuthorSplatRoute
+  CategorySplatRoute: typeof CategorySplatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/solutions': {
+      id: '/solutions'
+      path: '/solutions'
+      fullPath: '/solutions'
+      preLoaderRoute: typeof SolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/resources': {
       id: '/resources'
       path: '/resources'
@@ -182,11 +287,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact-us': {
+      id: '/contact-us'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof ContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies': {
+      id: '/case-studies'
+      path: '/case-studies'
+      fullPath: '/case-studies'
+      preLoaderRoute: typeof CaseStudiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/careers': {
@@ -201,6 +320,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/Accessoires-$': {
+      id: '/Accessoires-$'
+      path: '/Accessoires-$'
+      fullPath: '/Accessoires-$'
+      preLoaderRoute: typeof AccessoiresSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -237,6 +363,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/products/canvas'
       preLoaderRoute: typeof ProductsCanvasRouteImport
       parentRoute: typeof ProductsRoute
+    }
+    '/category/$': {
+      id: '/category/$'
+      path: '/category/$'
+      fullPath: '/category/$'
+      preLoaderRoute: typeof CategorySplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/author/$': {
+      id: '/author/$'
+      path: '/author/$'
+      fullPath: '/author/$'
+      preLoaderRoute: typeof AuthorSplatRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/resources/use-cases/$slug': {
       id: '/resources/use-cases/$slug'
@@ -280,11 +420,18 @@ const ResourcesRouteWithChildren = ResourcesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccessoiresSplatRoute: AccessoiresSplatRoute,
   AboutRoute: AboutRoute,
   CareersRoute: CareersRoute,
+  CaseStudiesRoute: CaseStudiesRoute,
   ContactRoute: ContactRoute,
+  ContactUsRoute: ContactUsRoute,
   ProductsRoute: ProductsRouteWithChildren,
   ResourcesRoute: ResourcesRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SolutionsRoute: SolutionsRoute,
+  AuthorSplatRoute: AuthorSplatRoute,
+  CategorySplatRoute: CategorySplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
