@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Radio } from "lucide-react";
 import dashboardPlus from "@/assets/dashboard-plus.png";
 import { Section, Eyebrow } from "@/components/Section";
+import { RelatedUseCases } from "@/components/RelatedUseCases";
 import { seo, jsonLd, breadcrumbJsonLd, softwareAppJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/plus")({

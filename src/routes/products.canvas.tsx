@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Database } from "lucide-react";
 import dashboardCanvas from "@/assets/dashboard-canvas.png";
 import { Section, Eyebrow } from "@/components/Section";
+import { RelatedUseCases } from "@/components/RelatedUseCases";
 import { seo, jsonLd, breadcrumbJsonLd, softwareAppJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/canvas")({

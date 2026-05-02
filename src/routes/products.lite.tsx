@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Smartphone, Camera } from "lucide-react";
 import dashboardLite from "@/assets/dashboard-lite.png";
 import { Section, Eyebrow } from "@/components/Section";
+import { RelatedUseCases } from "@/components/RelatedUseCases";
 import { seo, jsonLd, breadcrumbJsonLd, softwareAppJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/lite")({
