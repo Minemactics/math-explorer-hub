@@ -2,18 +2,37 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Smartphone, Camera } from "lucide-react";
 import dashboardLite from "@/assets/dashboard-lite.png";
 import { Section, Eyebrow } from "@/components/Section";
+import { seo, jsonLd, breadcrumbJsonLd, softwareAppJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/lite")({
-  head: () => ({
-    meta: [
-      { title: "Mineoptic Lite, Kill the paper. Keep the shift. | Minematics" },
-      { name: "description", content: "Mineoptic Lite replaces fuel logging and production counting paper workflows with two modules, Fuel and Visual, for clean, reconciled, granular mine data." },
-      { property: "og:title", content: "Mineoptic Lite, Kill the paper. Keep the shift." },
-      { property: "og:description", content: "Two focused modules: Mineoptic Fuel and Mineoptic Visual." },
-      { property: "og:image", content: dashboardLite },
-      { name: "twitter:image", content: dashboardLite },
-    ],
-  }),
+  head: () => {
+    const title = "Digital Fuel Logging & Production Counting for Mines | Mineoptic Lite";
+    const description =
+      "Replace paper fuel cards and manual production counts with Mineoptic Lite — offline-first mobile capture and AI-based truck and bucket counting.";
+    const path = "/products/lite";
+    const s = seo({ title, description, path, image: dashboardLite });
+    return {
+      meta: s.meta,
+      links: s.links,
+      scripts: [
+        jsonLd(
+          softwareAppJsonLd({
+            name: "Mineoptic Lite",
+            description,
+            path,
+            image: dashboardLite,
+          }),
+        ),
+        jsonLd(
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Products", path: "/products" },
+            { name: "Mineoptic Lite", path },
+          ]),
+        ),
+      ],
+    };
+  },
   component: LitePage,
 });
 

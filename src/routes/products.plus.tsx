@@ -2,18 +2,37 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Radio } from "lucide-react";
 import dashboardPlus from "@/assets/dashboard-plus.png";
 import { Section, Eyebrow } from "@/components/Section";
+import { seo, jsonLd, breadcrumbJsonLd, softwareAppJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/plus")({
-  head: () => ({
-    meta: [
-      { title: "Mineoptic Plus, Fleet tracking on the mines own network | Minematics" },
-      { name: "description", content: "Everything in Lite, plus near-live fleet tracking with status (empty, loaded, idle, maintenance), designed for low-network mine zones." },
-      { property: "og:title", content: "Mineoptic Plus, Status, not just position." },
-      { property: "og:description", content: "Near-live fleet intelligence on the mines own network." },
-      { property: "og:image", content: dashboardPlus },
-      { name: "twitter:image", content: dashboardPlus },
-    ],
-  }),
+  head: () => {
+    const title = "Fleet Tracking on the Mine's Own Network | Mineoptic Plus";
+    const description =
+      "Near-live fleet visibility for open-cast mines, on a private network that works in dead zones. Know every tipper's status, queue, and productive hours.";
+    const path = "/products/plus";
+    const s = seo({ title, description, path, image: dashboardPlus });
+    return {
+      meta: s.meta,
+      links: s.links,
+      scripts: [
+        jsonLd(
+          softwareAppJsonLd({
+            name: "Mineoptic Plus",
+            description,
+            path,
+            image: dashboardPlus,
+          }),
+        ),
+        jsonLd(
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Products", path: "/products" },
+            { name: "Mineoptic Plus", path },
+          ]),
+        ),
+      ],
+    };
+  },
   component: PlusPage,
 });
 

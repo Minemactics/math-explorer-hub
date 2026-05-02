@@ -13,16 +13,29 @@ import { useCases, useCaseCategories, type UseCaseCategory } from "@/data/useCas
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { UseCaseDetail } from "@/components/UseCaseDetail";
 import { ClientLogos } from "@/components/ClientLogos";
+import { seo, jsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/resources")({
-  head: () => ({
-    meta: [
-      { title: "Resources: Use Cases, Case Studies, Blogs & E-books | Minematics" },
-      { name: "description", content: "Industrial intelligence use cases, real-world case studies, blogs and e-books focused on Connectivity, Accuracy, Granularity, and Adoptability." },
-      { property: "og:title", content: "Resources | Minematics" },
-      { property: "og:description", content: "Use cases, case studies, blogs and e-books from the field." },
-    ],
-  }),
+  head: () => {
+    const s = seo({
+      title: "Mining Use Cases, Case Studies & Insights | Minematics",
+      description:
+        "Real-world use cases, case studies, and blog posts on mining fleet management, fuel logging, production counting, and mining intelligence.",
+      path: "/resources",
+    });
+    return {
+      meta: s.meta,
+      links: s.links,
+      scripts: [
+        jsonLd(
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Resources", path: "/resources" },
+          ]),
+        ),
+      ],
+    };
+  },
   component: ResourcesPage,
 });
 

@@ -2,18 +2,37 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Database } from "lucide-react";
 import dashboardCanvas from "@/assets/dashboard-canvas.png";
 import { Section, Eyebrow } from "@/components/Section";
+import { seo, jsonLd, breadcrumbJsonLd, softwareAppJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/canvas")({
-  head: () => ({
-    meta: [
-      { title: "Mineoptic Canvas: Your mines digital twin, on your database | Minematics" },
-      { name: "description", content: "A self-service BI canvas built for mines. Compose your operations digital twin from Excel, SQL, ERP and data servers, and keep the data on your own infrastructure." },
-      { property: "og:title", content: "Mineoptic Canvas: Your mines digital twin." },
-      { property: "og:description", content: "Self-service BI built specifically for mines, with data sovereignty by design." },
-      { property: "og:image", content: dashboardCanvas },
-      { name: "twitter:image", content: dashboardCanvas },
-    ],
-  }),
+  head: () => {
+    const title = "Mining BI & Digital Twin Platform | Mineoptic Canvas";
+    const description =
+      "A self-service BI canvas purpose-built for mines. Connect Excel, SQL, ERP — build the digital twin of your operations on your own database.";
+    const path = "/products/canvas";
+    const s = seo({ title, description, path, image: dashboardCanvas });
+    return {
+      meta: s.meta,
+      links: s.links,
+      scripts: [
+        jsonLd(
+          softwareAppJsonLd({
+            name: "Mineoptic Canvas",
+            description,
+            path,
+            image: dashboardCanvas,
+          }),
+        ),
+        jsonLd(
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Products", path: "/products" },
+            { name: "Mineoptic Canvas", path },
+          ]),
+        ),
+      ],
+    };
+  },
   component: CanvasPage,
 });
 

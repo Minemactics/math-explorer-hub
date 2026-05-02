@@ -1,16 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Code, Palette, Hammer, Handshake } from "lucide-react";
 import { Section, SectionTitle, Eyebrow } from "@/components/Section";
+import { seo, jsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/careers")({
-  head: () => ({
-    meta: [
-      { title: "Careers: Build the intelligence layer of mining | Minematics" },
-      { name: "description", content: "Mining runs the world, and far more of it runs on paper than outsiders realise. Help us change that." },
-      { property: "og:title", content: "Careers at Minematics" },
-      { property: "og:description", content: "Hard, useful problems. Real-world impact. Purpose-built culture." },
-    ],
-  }),
+  head: () => {
+    const s = seo({
+      title: "Careers at Minematics — Build Mining Intelligence | Hyderabad",
+      description:
+        "Join Minematics in Hyderabad to build Mineoptic, the mining intelligence platform used by leading Indian mines and contractors.",
+      path: "/careers",
+    });
+    return {
+      meta: s.meta,
+      links: s.links,
+      scripts: [
+        jsonLd(
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Careers", path: "/careers" },
+          ]),
+        ),
+      ],
+    };
+  },
   component: CareersPage,
 });
 
