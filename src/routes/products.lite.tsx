@@ -179,6 +179,12 @@ function LitePage() {
         </div>
       </Section>
 
+      <RelatedUseCases
+        slugs={["digital-fuel-logging", "trip-count-at-dump-yard", "buckets-count-per-truck-load"]}
+        title="See Mineoptic Lite in the field"
+        lead="Field-tested use cases powered by Mineoptic Fuel and Mineoptic Visual."
+      />
+
       <Section className="bg-teal-gradient text-accent-foreground">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Ready to replace the clipboard?</h2>

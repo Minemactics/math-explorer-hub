@@ -155,6 +155,12 @@ function CanvasPage() {
         </div>
       </Section>
 
+      <RelatedUseCases
+        slugs={["maintenance-yard-occupancy-analysis", "truck-cycle-time-analysis", "queue-lengths-at-excavators"]}
+        title="See Mineoptic Canvas in the field"
+        lead="Operational dashboards composed on the canvas, on the mines own data."
+      />
+
       <Section className="bg-teal-gradient text-accent-foreground">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Compose your digital twin.</h2>

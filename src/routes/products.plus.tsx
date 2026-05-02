@@ -160,6 +160,12 @@ function PlusPage() {
         </div>
       </Section>
 
+      <RelatedUseCases
+        slugs={["truck-cycle-time-analysis", "queue-lengths-at-excavators", "maintenance-yard-occupancy-analysis"]}
+        title="See Mineoptic Plus in the field"
+        lead="Use cases that depend on near-live fleet status across the pit."
+      />
+
       <Section className="bg-teal-gradient text-accent-foreground">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Status, not just position.</h2>
